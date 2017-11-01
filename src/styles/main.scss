@@ -1,0 +1,308 @@
+// Base
+
+@import 'base/variables';
+@import 'base/reset';
+@import 'base/typography';
+
+// Components
+
+@import 'components/topbar';
+@import 'components/topnav';
+@import 'components/page';
+
+// Pages
+
+@import 'pages/home';
+@import 'pages/posts';
+@import 'pages/post';
+
+@font-face {
+  font-family: 'Oranienbaum';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Oranienbaum'), local('Oranienbaum-Regular'), url(http://fonts.gstatic.com/s/oranienbaum/v4/WyaFSM_en0pjtlmUWwS7GSwlidHJgAgmTjOEEzwu1L8.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Oswald Light'), local('Oswald-Light'), url(http://fonts.gstatic.com/s/oswald/v10/HqHm7BVC_nzzTui2lzQTDSZ2oysoEQEeKwjgmXLRnTc.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Oswald Regular'), local('Oswald-Regular'), url(http://fonts.gstatic.com/s/oswald/v10/lXoKq2PC8Z_S1wl-BwvrB-vvDin1pK8aKteLpeZ5c0A.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Oswald Bold'), local('Oswald-Bold'), url(http://fonts.gstatic.com/s/oswald/v10/bH7276GfdCjMjApa_dkG6SZ2oysoEQEeKwjgmXLRnTc.ttf) format('truetype');
+}
+
+a {
+  color: black !important;
+  text-decoration: none !important;
+}
+
+.wrapper {
+  font-family: "Times New Roman","Times","serif";
+  font-size: 17px;
+  max-width: 1040px;
+  min-width: 700px;
+  margin: 0 auto ;
+  color: black;
+}
+
+.header {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 5px;
+  align-items: center;
+}
+
+.logo {
+  font-family: 'Oswald', sans-serif;
+  font-size: 40px;
+  margin-right: auto;
+}
+
+.tools {
+  display: flex;
+  align-items: baseline;
+}
+
+.contact-button {
+  padding: 0 11px;
+}
+
+.cities {
+  display: flex;
+  border-width: 1px;
+  border-style: solid;
+  padding: 3px 0px 3px 10px;
+  align-items: center;
+}
+
+.Dropdown-root {
+  border: 1px;
+  border-color: black;
+  color: black;
+  font-size: 18px;
+  background-color: white;
+  z-index: 99;
+  padding-left: 10px;
+}
+
+.Dropdown-control {
+  display: flex;
+}
+
+.Dropdown-menu {
+  position: absolute;
+  background-color: white;
+  border-width: 1px;
+  border-style: solid;
+  margin: 8px 0px 0px -21px;
+  padding: 0px 20px;
+}
+
+.Dropdown-arrow {
+  background-size: contain;
+  background: url("../images/down-arrow.png") no-repeat;
+  height: 20px;
+  width: 20px;
+}
+
+.tools > div{
+  margin-left: 3px;
+}
+
+.search {
+  font-family: "Times New Roman","Times","serif";
+  font-size: 15px;
+  border-style: solid;
+  border-width: 1px;
+  text-align: center;
+  padding: 6px;
+}
+
+.search:focus,
+.search .focus, :hover {
+  color: black;
+  outline: 0;
+}
+
+.social-button a {
+  padding-left: 4px;
+}
+
+.social-button img{
+  width: 15px;
+  height: 15px;
+  padding: 7px;
+  border-style: solid;
+  border-width: 1px;
+  margin-bottom: -11px
+}
+
+.models-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 350px);
+}
+
+.models-wrapper .model {
+  width: 340px;
+  height: 340px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.models-wrapper .model img{
+  width: 340px;
+  height: 340px;
+  -moz-transition: all 1s ease-out;
+  -o-transition: all 1s ease-out;
+  -webkit-transition: all 1s ease-out;
+}
+
+.models-wrapper .model img:hover{
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -o-transform: scale(1.1);
+}
+
+.model-wrapper {
+  margin-top: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.model-wrapper .opened-image{
+  height: 900px;
+  padding-right: 20px;
+}
+
+.model-wrapper .column{
+  display: flex;
+  flex-direction: column;
+}
+
+.model-wrapper .column .model-name{
+  font-size: 30px;
+  line-height: 30px;
+  font-family: 'Oswald', sans-serif;
+}
+
+.model-wrapper .column img{
+  width: 90px;
+  padding: 2px;
+  margin-top: 8px;
+  border: 1px solid #FFFFFF;
+}
+
+.model-wrapper .column img:hover{
+  border: 1px solid #000000;
+  cursor: zoom-in;
+}
+
+.model-wrapper .column img.bordered{
+  border: 1px solid #000000;
+}
+
+.model-wrapper .column .parameters{
+  margin-top: 10px;
+}
+
+.model-wrapper .column .parameters p{
+  margin: 3px 0 0 3px;
+  font-size: 16px;
+}
+
+.model-wrapper .content {
+  max-width: 200px;
+  padding-left: 20px;
+  height: 200px;
+}
+
+.model-wrapper .content img{
+  width: 90px;
+  padding: 2px;
+  border: 1px solid #FFFFFF;
+}
+
+.model-wrapper .content img:hover{
+  border: 1px solid #000000;
+  cursor: zoom-in;
+}
+
+
+.arrow {
+  height: 30px;
+  width: 30px;
+  position: fixed;
+  margin-top: 19%;
+}
+
+.prev-arrow {
+  background: url("../images/prev-arrow.png") center center no-repeat;
+  left: 5%;
+  cursor: w-resize;
+  z-index: 99;
+}
+
+.next-arrow {
+  background: url("../images/next-arrow.png") center center no-repeat;
+  right: 5%;
+  cursor: e-resize;
+  z-index: 98;
+}
+
+.ReactModal__Overlay {
+  z-index: 99;
+  background-color: rgba(255, 255, 255, 1) !important;
+}
+
+.ReactModal__Content {
+  border: none !important;
+  position: relative !important;
+  top: 0px !important;
+  left: 0px !important;
+  right: 0px !important;
+  bottom: 0px !important;
+}
+
+.ReactModal__Content .current-content {
+  display: flex;
+  justify-content: center;
+}
+
+.ReactModal__Content .thumbnails {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+.ReactModal__Content .current-content img {
+  width: 300px;
+  height: 500px;
+}
+
+.ReactModal__Content .close-button {
+  position: fixed;
+  top: 50px;
+  right: 50px;
+  cursor: pointer;
+  font-size: 40px;
+}
+
+@media (max-width:1028px) {
+  .wrapper {
+    max-width: 690px;
+  }
+  .models-wrapper {
+    grid-template-columns: repeat(2, 350px);
+  }
+}

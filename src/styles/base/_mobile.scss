@@ -1,0 +1,32 @@
+@media (max-width:1028px) {
+  .wrapper {
+    min-width: 690px;
+    width: 690px;
+  }
+  .header {
+    flex-wrap: wrap;
+  }
+  .cities {
+    order: 9;
+    min-width: 140px;
+  }
+  .models-wrapper {
+    grid-template-columns: repeat(2, 350px);
+  }
+  .model-wrapper {
+    margin-top: 5px;
+  }
+  .model-wrapper .opened-image {
+    height: 830px;
+    width: 545px;
+  }
+  .model-wrapper .content {
+    max-width: 700px;
+    height: auto;
+    padding-top: 20px;
+    padding-left: 0px;
+  }
+  .model-wrapper .content img {
+    width: 165px;
+  }
+}

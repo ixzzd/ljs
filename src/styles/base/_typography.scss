@@ -1,39 +1,24 @@
-html {
-	font-family: 'Roboto', Helvetica, sans-serif;
-	font-size: 100%;
-	font-style: normal;
-	font-weight: normal;
-	text-rendering: optimizeLegibility;
-	-webkit-font-smoothing: antialiased;
-	line-height: 1.5;
+@font-face {
+  font-family: 'Oranienbaum';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Oranienbaum'), local('Oranienbaum-Regular'), url(http://fonts.gstatic.com/s/oranienbaum/v4/WyaFSM_en0pjtlmUWwS7GSwlidHJgAgmTjOEEzwu1L8.ttf) format('truetype');
 }
-
-body {
-	color: #666;
-	line-height: 1.333;
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Oswald Light'), local('Oswald-Light'), url(http://fonts.gstatic.com/s/oswald/v10/HqHm7BVC_nzzTui2lzQTDSZ2oysoEQEeKwjgmXLRnTc.ttf) format('truetype');
 }
-
-h1 {
-  margin-top: 0;
-  font-size: 3.998em;
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Oswald Regular'), local('Oswald-Regular'), url(http://fonts.gstatic.com/s/oswald/v10/lXoKq2PC8Z_S1wl-BwvrB-vvDin1pK8aKteLpeZ5c0A.ttf) format('truetype');
 }
-
-h1, h2 {font-size: 2.827em;}
-
-h3 {font-size: 1.999em;}
-
-h4 {font-size: 1.414em;}
-
-small, .font_small {font-size: 0.707em;}
-
-a {
-	text-decoration: none;
-	cursor: pointer;
-	color: rgba(#000, .9);
-	&:hover {
-		color: rgba(#000, 1);
-	}
-	&.active {
-		color: rgba(#000, 1);
-	}
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Oswald Bold'), local('Oswald-Bold'), url(http://fonts.gstatic.com/s/oswald/v10/bH7276GfdCjMjApa_dkG6SZ2oysoEQEeKwjgmXLRnTc.ttf) format('truetype');
 }

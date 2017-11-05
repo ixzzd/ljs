@@ -55,7 +55,9 @@ class ModelsFlow extends React.Component {
         <BindKeyboardSwipeableViews onChangeIndex={this.handleChangeIndex}
                                     animateTransitions={false}
                                     enableMouseEvents={true}
+                                    disabled={!this.store.modelsSwipeEnabled}
                                     index={this.store.modelIndex}
+                                    ignoreNativeScroll={true}
                                     slideRenderer={this.slideRenderer} />
       </div>
     );

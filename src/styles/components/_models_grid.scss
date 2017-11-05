@@ -1,0 +1,25 @@
+.models-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 350px);
+}
+
+.models-wrapper .model {
+  width: 340px;
+  height: 340px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.models-wrapper .model img{
+  width: 340px;
+  height: 340px;
+  -moz-transition: all 1s ease-out;
+  -o-transition: all 1s ease-out;
+  -webkit-transition: all 1s ease-out;
+}
+
+.models-wrapper .model img:hover{
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -o-transform: scale(1.1);
+}

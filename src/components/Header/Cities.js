@@ -26,7 +26,6 @@ export default class Cities extends React.Component {
 
     return (
       <div className='cities' >
-        <div>CITY:</div>
         <Dropdown
           options={cities}
           onChange={this.handleChangeDropdown.bind(this)}

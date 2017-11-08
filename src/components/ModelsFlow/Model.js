@@ -40,9 +40,10 @@ export default class Model extends React.Component {
 
           {
             [model.face, model.three_quarter, model.profile].map((image) => {
-                 return <img key={image.small} className={this.imageClass(image)}
-                 src={image.small}
-                 onClick={(e) => this.selectImage(image, e)}/>
+                if (image.small) {
+                  return <img key={image.small} className={this.imageClass(image)}
+                         src={image.small} onClick={(e) => this.selectImage(image, e)}/>
+                }
             })
           }
 

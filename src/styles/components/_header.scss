@@ -62,6 +62,14 @@
   border-width: 1px;
   text-align: center;
   padding: 6px;
+  width: 100px;
+}
+
+.search::placeholder {
+  color: black;
+}
+.search:focus::placeholder {
+  color:transparent;
 }
 
 .search:focus,

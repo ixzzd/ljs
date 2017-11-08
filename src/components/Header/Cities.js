@@ -19,17 +19,12 @@ export default class Cities extends React.Component {
   }
 
   render() {
-    const cities = this.store.cities.sort((a, b) => a.position - b.position)
-                                    .map(city => (city.name.toUpperCase()))
-    const currentCity = this.store.city.toUpperCase();
-    cities.splice(cities.indexOf(currentCity), 1);
-
     return (
       <div className='cities' >
         <Dropdown
-          options={cities}
+          options={this.store.displayedCities}
           onChange={this.handleChangeDropdown.bind(this)}
-          placeholder={currentCity} />
+          placeholder={this.store.city.toUpperCase()} />
       </div>
     );
   }

@@ -1,7 +1,7 @@
 import React from "react";
 import Title from "./Header/Title";
-import Sex from "./Header/Sex";
 import Tools from "./Header/Tools";
+import Sex from "./Header/Sex";
 import Cities from "./Header/Cities";
 
 export default class Header extends React.Component {

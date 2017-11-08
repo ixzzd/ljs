@@ -16,7 +16,7 @@ export default class ModelsGrid extends React.Component {
   }
 
   getModelURI(model) {
-    return `/${model.city}/${model.name.toLowerCase()}`
+    return `/${this.store.city}/${model.name.toLowerCase()}`
   }
 
   render() {

@@ -9,6 +9,7 @@ export default class AppState {
   @observable model;
   @observable modelsSwipeEnabled;
   @observable sex;
+  @observable search;
 
   constructor() {
     this.models = [];
@@ -20,11 +21,20 @@ export default class AppState {
     this.sex = 'men';
   }
 
+  loadData() {
+    if (localStorage.getItem('Data')) {
+      this.setData(JSON.parse(localStorage.getItem('Data')));
+    } else {
+      this.fetchData()
+    }
+  }
+
   async fetchData() {
     let { data } = await axios.get(
       `http://lumpen.agency/data.json`
     );
     this.setData(data);
+    localStorage.setItem('Data', JSON.stringify(data));
   }
 
   @action setData(data) {
@@ -34,7 +44,11 @@ export default class AppState {
   }
 
   @action setCity(city) {
-    this.city = city
+    this.city = city.toLowerCase()
+  }
+
+  @action setSearch(searchString) {
+    this.search = searchString
   }
 
   @action setModel(model) {
@@ -64,11 +78,24 @@ export default class AppState {
   }
 
   @computed get filteredModels() {
-    return this.models.filter(
-      model =>
-        model.city && model.city.toUpperCase() == this.city.toUpperCase()
-          && model.sex == this.sex
-    )
+    return this.models.filter(model =>
+            this.modelInCity(model, this.city)
+              && model.sex == this.sex
+              && this.searchMatched(model)
+            ).sort((a, b) => a.position - b.position)
+  }
+
+  searchMatched(model) {
+    if (!this.search) {
+      return true
+    }
+    else {
+      return model.name.toUpperCase().includes(this.search.toUpperCase())
+    }
+  }
+
+  modelInCity(model, city){
+    return model.cities.map(city => (city.name)).includes(city)
   }
 
   @computed get modelIndex() {
@@ -84,7 +111,17 @@ export default class AppState {
   }
 
   @action changeSex() {
-    // console.log(this.sex);
     this.sex = this.sex == 'men' ? 'women' : 'men'
+  }
+
+  @computed get displayedCities() {
+    var cities = this.cities.filter(city =>
+                                this.models.filter(model => this.modelInCity(model, city.name)).length > 0
+                            )
+                            .sort((a, b) => a.position - b.position)
+                            .map(city => (city.name.toUpperCase()))
+
+    return cities
+    // .splice(cities.indexOf(this.city), 1);
   }
 }

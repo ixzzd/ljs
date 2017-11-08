@@ -3,6 +3,8 @@ import { NavLink } from 'react-router-dom'
 import facebookImg from '../../images/facebook.png'
 import vkImg from '../../images/vk.png'
 import instagramImg from '../../images/instagram.png'
+import Search from "./Search";
+
 
 export default class Tools extends React.Component {
   render() {
@@ -13,9 +15,7 @@ export default class Tools extends React.Component {
             CONTACT
           </NavLink>
         </div>
-        <div>
-          <input className='search' type='text' name='search' value='SEARCH'></input>
-        </div>
+        <Search />
         <div>
           <a className='social-button' href='/'>
             <img src={instagramImg} alt='hello-icon' />

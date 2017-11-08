@@ -17,7 +17,7 @@ export default class App extends Component {
 		this.store = this.props.store;
 	}
 	componentDidMount() {
-		this.store.appState.fetchData();
+		this.store.appState.loadData();
 	}
 
 	render() {

@@ -1,66 +1,67 @@
 .model-wrapper {
-  margin-top: 25px;
+  margin-top: 1vh;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-}
 
-.model-wrapper .opened-image{
-  height: 900px;
-  padding-right: 20px;
-}
+  .opened-image{
+    padding-right: 20px;
+    height: 90vh;
+    min-height: 500px;
+  }
 
-.model-wrapper .column{
-  display: flex;
-  flex-direction: column;
-}
+  .column{
+    display: flex;
+    flex-direction: column;
 
-.model-wrapper .column .model-name{
-  font-size: 30px;
-  line-height: 30px;
-  font-family: 'Oswald', sans-serif;
-}
+    .model-name{
+      font-size: 30px;
+      line-height: 30px;
+      font-family: 'Oswald', sans-serif;
+    }
 
-.model-wrapper .column img{
-  width: 90px;
-  padding: 2px;
-  margin-top: 8px;
-  border: 1px solid #FFFFFF;
-}
+    img{
+      width: 90px;
+      padding: 2px;
+      margin-top: 8px;
+      border: 1px solid #FFFFFF;
 
-.model-wrapper .column img:hover{
-  border: 1px solid #000000;
-  cursor: zoom-in;
-}
+      .bordered{
+        border: 1px solid #000000;
+      }
+    }
 
-.model-wrapper .column img.bordered{
-  border: 1px solid #000000;
-}
+    img:hover{
+      border: 1px solid #000000;
+      cursor: zoom-in;
+    }
 
-.model-wrapper .column .parameters{
-  margin-top: 10px;
-}
+    .parameters{
+      margin-top: 10px;
 
-.model-wrapper .column .parameters p{
-  margin: 3px 0 0 3px;
-  font-size: 16px;
-}
+      p{
+        margin: 3px 0 0 3px;
+        font-size: 16px;
+      }
+    }
+  }
 
-.model-wrapper .content {
-  max-width: 200px;
-  padding-left: 20px;
-  height: 200px;
-}
+  .content {
+    max-width: 200px;
+    padding-left: 20px;
+    height: 200px;
 
-.model-wrapper .content img{
-  width: 90px;
-  padding: 2px;
-  border: 1px solid #FFFFFF;
-}
+    img{
+      width: 90px;
+      padding: 2px;
+      border: 1px solid #FFFFFF;
+    }
 
-.model-wrapper .content img:hover{
-  border: 1px solid #000000;
-  cursor: zoom-in;
+    img:hover{
+      border: 1px solid #000000;
+      cursor: zoom-in;
+    }
+  }
 }
 
 .arrow {

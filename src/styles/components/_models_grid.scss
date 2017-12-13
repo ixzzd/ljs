@@ -1,6 +1,7 @@
 .models-wrapper {
   display: grid;
-  grid-template-columns: repeat(3, 350px);
+  grid-gap: 8px;
+  grid-template: repeat(3, 340px) / repeat(3, 340px);
 }
 
 .models-wrapper .model {

@@ -25,18 +25,22 @@ class ModelsFlow extends React.Component {
   componentDidMount() {
     this.store.setCity(this.props.match.params.city)
     this.store.setModel(this.props.match.params.modelName)
+    window.scrollTo(0, 0)
   }
 
   handlePrevClick() {
     this.store.prevModel()
+    window.scrollTo(0, 0)
   }
 
   handleNextClick() {
     this.store.nextModel()
+    window.scrollTo(0, 0)
   }
 
   handleChangeIndex(index) {
     this.store.setModelByIndex(index)
+    window.scrollTo(0, 0)
   };
 
   slideRenderer(params) {
@@ -52,13 +56,18 @@ class ModelsFlow extends React.Component {
       <div className='model-flow'>
         <a className='arrow prev-arrow' onClick={this.handlePrevClick} />
         <a className='arrow next-arrow' onClick={this.handleNextClick} />
+        <div className='arrow scroll-down'>
+          scroll down
+          <div className='arrow down-arrow'></div>
+        </div>
         <BindKeyboardSwipeableViews onChangeIndex={this.handleChangeIndex}
                                     animateTransitions={false}
                                     enableMouseEvents={true}
                                     disabled={!this.store.modelsSwipeEnabled}
                                     index={this.store.modelIndex}
                                     ignoreNativeScroll={true}
-                                    slideRenderer={this.slideRenderer} />
+                                    slideRenderer={this.slideRenderer}
+                                    animateHeight={true} />
       </div>
     );
   }

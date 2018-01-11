@@ -1,5 +1,5 @@
 .model-wrapper {
-  margin-top: 1vh;
+  padding: 1vh 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -45,35 +45,48 @@
       }
     }
   }
+}
 
-  .content {
-    max-width: 200px;
-    padding-left: 20px;
-    height: 200px;
+.contents {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 
-    img{
-      width: 90px;
-      padding: 2px;
-      border: 1px solid #FFFFFF;
-    }
+  img{
+    height: 90vh;
+    padding: 1vh;
+    min-height: 500px;
+    max-width: 1000px;
 
-    img:hover{
-      border: 1px solid #000000;
-      cursor: zoom-in;
-    }
   }
 }
+  // .content {
+  //   max-width: 200px;
+  //   padding-left: 20px;
+  //   height: 200px;
+
+  //   img{
+  //     width: 90px;
+  //     padding: 2px;
+  //     border: 1px solid #FFFFFF;
+  //   }
+
+  //   img:hover{
+  //     border: 1px solid #000000;
+  //     cursor: zoom-in;
+  //   }
+  // }
 
 .arrow {
   height: 30px;
   width: 30px;
   position: fixed;
-  margin-top: 19%;
 }
 
 .prev-arrow {
   background: url("../images/prev-arrow.png") center center no-repeat;
   left: 5%;
+  margin-top: 19%;
   cursor: w-resize;
   z-index: 99;
 }
@@ -81,6 +94,22 @@
 .next-arrow {
   background: url("../images/next-arrow.png") center center no-repeat;
   right: 5%;
+  margin-top: 19%;
   cursor: e-resize;
   z-index: 98;
+}
+
+.scroll-down {
+  left: 50%;
+  z-index: 98;
+  bottom: 5%;
+
+  .down-arrow {
+    background: url("../images/next-arrow.png") center center no-repeat;
+    transform: rotate(90deg);
+  }
+}
+
+.react-swipeable-view-container > div {
+  overflow-y: auto !important;
 }

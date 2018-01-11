@@ -14,7 +14,7 @@ export default class Title extends React.Component {
     return (
       <div className='logo'>
       	<Link to='/'>
-          { this.store.sex == 'men' ? 'LUMPENMEN' : 'LUMPENWOMEN' }
+          { this.store.currentModel && this.store.currentModel.sex == 'women' ? 'LUMPENWOMEN' : 'LUMPENMEN' }
       	</Link>
       </div>
     );

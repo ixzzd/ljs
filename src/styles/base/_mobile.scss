@@ -1,29 +1,30 @@
 @media (max-width:1028px) {
   .wrapper {
-    min-width: 690px;
-    width: 690px;
-  }
-  .header {
-    flex-wrap: wrap;
-  }
-  .cities {
-    order: 9;
-    min-width: 140px;
-  }
-  .models-wrapper {
-    grid-template-columns: repeat(2, 350px);
-  }
-  .model-wrapper {
-    margin-top: 5px;
-  }
+    width: 95%;
 
-  .model-wrapper .content {
-    max-width: 700px;
-    height: auto;
-    padding-top: 20px;
-    padding-left: 0px;
-  }
-  .model-wrapper .content img {
-    width: 165px;
+    .model-wrapper {
+      .opened-image {
+        height: auto;
+      }
+    }
+
+    .contents {
+        img{
+          height: auto;
+          width: auto;
+        }
+      }
+
+    .models-wrapper {
+      .model {
+        img{
+          width: auto;
+          height: auto;
+        }
+      }
+
+      grid-template: repeat(2, 50%) / repeat(2, 50%);
+      margin-top: 5px;
+    }
   }
 }

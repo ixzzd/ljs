@@ -8,7 +8,6 @@ export default class AppState {
   @observable city;
   @observable model;
   @observable modelsSwipeEnabled;
-  @observable sex;
   @observable search;
 
   constructor() {
@@ -18,15 +17,14 @@ export default class AppState {
     this.city = 'moscow';
     this.model = '';
     this.modelsSwipeEnabled = true;
-    this.sex = 'men';
   }
 
   loadData() {
-    if (localStorage.getItem('Data')) {
-      this.setData(JSON.parse(localStorage.getItem('Data')));
-    } else {
+    // if (localStorage.getItem('Data')) {
+      // this.setData(JSON.parse(localStorage.getItem('Data')));
+    // } else {
       this.fetchData()
-    }
+    // }
   }
 
   async fetchData() {
@@ -79,10 +77,39 @@ export default class AppState {
 
   @computed get filteredModels() {
     return this.models.filter(model =>
-            this.modelInCity(model, this.city)
-              && model.sex == this.sex
+              this.modelInCity(model, this.city)
               && this.searchMatched(model)
-            ).sort((a, b) => a.position - b.position)
+            ).sort(this.sortBySexAndPosition)
+  }
+
+  @computed get currentModel() {
+    if (this.modelIndex >= 0) {
+      return this.filteredModels[this.modelIndex]
+    }
+    else {
+      return null
+    }
+  }
+
+  @computed get sex() {
+    if (this.currentModel) {
+      return this.currentModel.sex
+    }
+    else {
+      return 'men'
+    }
+  }
+
+  sortBySexAndPosition(a, b) {
+    if (a.sex == b.sex) {
+      return a.position - b.position
+    }
+    else if(a.sex == 'men'){
+      return -1
+    }
+    else{
+      return 1
+    }
   }
 
   searchMatched(model) {
@@ -110,8 +137,8 @@ export default class AppState {
     this.modelsSwipeEnabled = false
   }
 
-  @action changeSex() {
-    this.sex = this.sex == 'men' ? 'women' : 'men'
+  @action setSex(sex) {
+    this.sex = sex
   }
 
   @computed get displayedCities() {

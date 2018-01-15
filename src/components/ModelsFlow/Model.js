@@ -40,7 +40,7 @@ export default class Model extends React.Component {
             <div className='model-name'>{model.name}</div>
 
             {
-              [model.face, model.three_quarter, model.profile].map((image) => {
+              [model.face, model.three_quarter, model.profile].filter(Boolean).map((image) => {
                   if (image.small) {
                     return <img key={image.small} className={this.imageClass(image)}
                            src={image.small} onClick={(e) => this.selectImage(image, e)}/>

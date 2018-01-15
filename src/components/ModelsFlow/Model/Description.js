@@ -33,17 +33,23 @@ export default class Description extends React.Component {
 
           <div className='model-name'>{model.name}</div>
 
-          <img className={this.imageClass(model.face)}
+          {model.face &&
+            <img className={this.imageClass(model.face)}
                src={model.face.small}
                onClick={() => this.selectImage(model.face)}/>
+          }
 
-          <img className={this.imageClass(model.three_quarter)}
+          {model.three_quarter &&
+            <img className={this.imageClass(model.three_quarter)}
                src={model.three_quarter.small}
                onClick={() => this.selectImage(model.three_quarter)}/>
+          }
 
-          <img className={this.imageClass(model.profile)}
+          {model.profile &&
+            <img className={this.imageClass(model.profile)}
                src={model.profile.small}
                onClick={() => this.selectImage(model.profile)}/>
+          }
 
           <div className='parameters'>
             <p>height: {model.height}</p>

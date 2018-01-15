@@ -1,7 +1,6 @@
 .model-wrapper {
   padding: 1vh 0;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
 
   .opened-image{
@@ -57,25 +56,8 @@
     padding: 1vh;
     min-height: 500px;
     max-width: 1000px;
-
   }
 }
-  // .content {
-  //   max-width: 200px;
-  //   padding-left: 20px;
-  //   height: 200px;
-
-  //   img{
-  //     width: 90px;
-  //     padding: 2px;
-  //     border: 1px solid #FFFFFF;
-  //   }
-
-  //   img:hover{
-  //     border: 1px solid #000000;
-  //     cursor: zoom-in;
-  //   }
-  // }
 
 .arrow {
   height: 30px;
@@ -88,7 +70,7 @@
   left: 5%;
   margin-top: 19%;
   cursor: w-resize;
-  z-index: 99;
+  z-index: 98;
 }
 
 .next-arrow {

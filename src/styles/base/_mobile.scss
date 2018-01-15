@@ -16,15 +16,15 @@
       }
 
     .models-wrapper {
-      .model {
-        img{
-          width: auto;
-          height: auto;
-        }
-      }
-
-      grid-template: repeat(2, 50%) / repeat(2, 50%);
+      grid-template-columns: auto auto;
       margin-top: 5px;
     }
+  }
+
+  .Dropdown-menu {
+    width: 90%;
+    left: 5%;
+    font-size: 25px;
+    top: 7%;
   }
 }

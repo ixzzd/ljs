@@ -21,6 +21,7 @@
 }
 
 .Dropdown-root {
+  cursor: pointer;
   border: 1px;
   border-color: black;
   color: black;
@@ -42,8 +43,6 @@
   margin: 8px 0px 0px -21px;
   padding: 0px 15px;
   z-index: 99;
-  display: grid;
-  grid-template-columns: auto auto;
 }
 
 .Dropdown-arrow {

@@ -1,3 +1,7 @@
+.react-swipeable-view-container{
+  // height: 100% !important;
+}
+
 .model-wrapper {
   padding: 1vh 0;
   display: flex;
@@ -54,7 +58,6 @@
   img{
     height: 90vh;
     padding: 1vh;
-    min-height: 500px;
     max-width: 1000px;
   }
 }

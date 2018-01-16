@@ -10,7 +10,6 @@ import { observer, inject } from 'mobx-react';
 const BindKeyboardSwipeableViews = virtualize(bindKeyboard(SwipeableViews));
 
 @inject("store")
-
 @observer
 class ModelsFlow extends React.Component {
   constructor(props) {
@@ -22,7 +21,7 @@ class ModelsFlow extends React.Component {
     this.slideRenderer = this.slideRenderer.bind(this)
   }
 
-  componentDidMount() {
+  componentWillMount() {
     this.store.setCity(this.props.match.params.city)
     this.store.setModel(this.props.match.params.modelName)
     window.scrollTo(0, 0)

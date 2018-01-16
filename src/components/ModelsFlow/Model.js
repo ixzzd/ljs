@@ -2,15 +2,11 @@ import React from 'react';
 import NavLink from 'react-router-dom'
 import Description from './Model/Description';
 import LazyLoad from 'react-lazyload';
-import { observer, inject } from 'mobx-react';
 
-@inject("store")
-@observer
 export default class Model extends React.Component {
-  constructor(props) {
-    super(props)
-    this.store = this.props.store.appState
-    this.state = {selectedImage: this.props.model.face}
+  constructor() {
+    super();
+    this.state = {selectedImage: {face: {normal: '', small: ''}}}
   }
 
   selectImage(image, e) {
@@ -21,6 +17,16 @@ export default class Model extends React.Component {
 
   imageClass(image) {
     if (this.state.selectedImage == image) return 'bordered'
+  }
+
+  componentDidMount() {
+    var model = this.props.model
+
+    if(model !== undefined) {
+      this.setState({
+        selectedImage: model.face
+      })
+    }
   }
 
   render() {
@@ -50,15 +56,13 @@ export default class Model extends React.Component {
             </div>
           </div>
         </div>
-        {model.name.toLowerCase() == this.store.model.toLowerCase() &&
-          <div className='contents'>
-            {this.props.model.contents.map((content, index) => (
-              <LazyLoad offset={100} once>
-                <img key={content.id} src={content.image_url.normal}/>
-              </LazyLoad>
-            ))}
-          </div>
-        }
+        <div className='contents'>
+          {this.props.model.contents.map((content, index) => (
+            <LazyLoad height={200}>
+              <img key={content.id} src={content.image_url.normal}/>
+            </LazyLoad>
+          ))}
+        </div>
       </div>
     );
   }

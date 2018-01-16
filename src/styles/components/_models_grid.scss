@@ -6,7 +6,7 @@
 .models-wrapper {
   display: grid;
   grid-gap: 8px;
-  grid-template: repeat(3, 340px) / repeat(3, 340px);
+  grid-template-columns: auto auto auto;
 
   .model {
     overflow: hidden;

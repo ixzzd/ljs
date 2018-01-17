@@ -11,4 +11,4 @@ deployment:
   production:
     branch: master
     commands:
-      - ./script/deploy
+      - ./deploy.sh

@@ -21,7 +21,7 @@ class ModelsFlow extends React.Component {
     this.slideRenderer = this.slideRenderer.bind(this)
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.store.setCity(this.props.match.params.city)
     this.store.setModel(this.props.match.params.modelName)
     window.scrollTo(0, 0)
@@ -40,7 +40,7 @@ class ModelsFlow extends React.Component {
   handleChangeIndex(index) {
     this.store.setModelByIndex(index)
     window.scrollTo(0, 0)
-  };
+  }
 
   slideRenderer(params) {
     const { index, key } = params;
@@ -66,7 +66,8 @@ class ModelsFlow extends React.Component {
                                     index={this.store.modelIndex}
                                     ignoreNativeScroll={true}
                                     slideRenderer={this.slideRenderer}
-                                    animateHeight={true} />
+                                    animateHeight={true}
+                                    />
       </div>
     );
   }

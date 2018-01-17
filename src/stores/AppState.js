@@ -50,7 +50,7 @@ export default class AppState {
   }
 
   @action setModel(model) {
-    this.model = model.toLowerCase()
+    this.model = model
   }
 
   @action setModelByIndex(index) {

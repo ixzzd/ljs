@@ -1,0 +1,100 @@
+.react-swipeable-view-container{
+  // height: 100% !important;
+}
+
+.model-wrapper {
+  padding: 1vh 0;
+  display: flex;
+  justify-content: center;
+
+  .opened-image{
+    padding-right: 20px;
+    height: 90vh;
+    min-height: 500px;
+  }
+
+  .column{
+    display: flex;
+    flex-direction: column;
+
+    .model-name{
+      font-size: 30px;
+      line-height: 30px;
+      font-family: 'Oswald', sans-serif;
+    }
+
+    img{
+      width: 90px;
+      padding: 2px;
+      margin-top: 8px;
+      border: 1px solid #FFFFFF;
+
+      .bordered{
+        border: 1px solid #000000;
+      }
+    }
+
+    img:hover{
+      border: 1px solid #000000;
+      cursor: zoom-in;
+    }
+
+    .parameters{
+      margin-top: 10px;
+
+      p{
+        margin: 3px 0 0 3px;
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+.contents {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  img{
+    height: 90vh;
+    padding: 1vh;
+    max-width: 1000px;
+  }
+}
+
+.arrow {
+  height: 30px;
+  width: 30px;
+  position: fixed;
+}
+
+.prev-arrow {
+  background: url("../images/prev-arrow.png") center center no-repeat;
+  left: 5%;
+  margin-top: 19%;
+  cursor: w-resize;
+  z-index: 98;
+}
+
+.next-arrow {
+  background: url("../images/next-arrow.png") center center no-repeat;
+  right: 5%;
+  margin-top: 19%;
+  cursor: e-resize;
+  z-index: 98;
+}
+
+.scroll-down {
+  left: 50%;
+  z-index: 98;
+  bottom: 5%;
+
+  .down-arrow {
+    background: url("../images/next-arrow.png") center center no-repeat;
+    transform: rotate(90deg);
+  }
+}
+
+.react-swipeable-view-container > div {
+  overflow-y: auto !important;
+}

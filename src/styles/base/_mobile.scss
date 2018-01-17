@@ -1,0 +1,51 @@
+@media (max-width:1028px) {
+  .header {
+    font-size: 20px;
+  }
+
+  .wrapper {
+    width: 95%;
+
+    .model-wrapper {
+      .opened-image {
+        height: auto;
+      }
+    }
+
+    .contents {
+        img{
+          height: auto;
+          width: auto;
+        }
+      }
+
+    .models-wrapper {
+      grid-template: repeat(2, 49.5%) / repeat(2, 49.5%);
+      margin-top: 5px;
+
+      .model {
+        img:hover{
+          -webkit-transform: none;
+          -moz-transform: none;
+          -o-transform: none;
+        }
+      }
+    }
+  }
+
+  .Dropdown-root {
+    font-size: 21px;
+    margin-bottom: 5px;
+  }
+
+  .Dropdown-menu {
+    left: 5%;
+    right: 5%;
+    font-size: 35px;
+    top: 50px;
+  }
+
+  .Dropdown-option {
+    text-align: center;
+  }
+}

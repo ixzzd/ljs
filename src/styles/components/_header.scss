@@ -1,0 +1,101 @@
+.header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5px;
+  align-items: center;
+}
+
+.logo {
+  font-family: 'Oswald', sans-serif;
+  font-size: 40px;
+  margin-right: auto;
+}
+
+.tools {
+  display: flex;
+  align-items: baseline;
+}
+
+.contact-button {
+  padding: 0 11px;
+}
+
+.Dropdown-root {
+  cursor: pointer;
+  border: 1px;
+  border-color: black;
+  color: black;
+  font-size: 18px;
+  background-color: white;
+  z-index: 99;
+  padding-left: 10px;
+}
+
+.Dropdown-control {
+  display: flex;
+}
+
+.Dropdown-menu {
+  position: absolute;
+  background-color: white;
+  border-width: 1px;
+  border-style: solid;
+  margin: 8px 0px 0px -21px;
+  padding: 0px 15px;
+  z-index: 99;
+}
+
+.Dropdown-arrow {
+  background-size: contain;
+  background: url("../images/down-arrow.png") no-repeat;
+  height: 20px;
+  width: 20px;
+}
+
+.Dropdown-option {
+  padding: 5px;
+}
+
+.tools > div{
+  margin-left: 3px;
+}
+
+.search {
+  font-family: "Times New Roman","Times","serif";
+  font-size: 15px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+  text-align: center;
+}
+
+input.search{
+  height: 27px;
+  width: 100px;
+}
+
+.search::placeholder {
+  color: black;
+}
+.search:focus::placeholder {
+  color:transparent;
+}
+
+.search:focus,
+.search .focus, :hover {
+  color: black;
+  outline: 0;
+}
+
+.social-button a {
+  padding-left: 4px;
+}
+
+.social-button img{
+  width: 15px;
+  height: 15px;
+  padding: 7px;
+  border-style: solid;
+  border-width: 1px;
+  margin-bottom: -11px
+}

@@ -55,12 +55,6 @@ class ModelsFlow extends React.Component {
       <div className='model-flow'>
         <a className='arrow prev-arrow' onClick={this.handlePrevClick} />
         <a className='arrow next-arrow' onClick={this.handleNextClick} />
-        { this.store.currentModelContentPresent &&
-          <div className='scroll-down'>
-            scroll down
-            <div className='down-arrow'></div>
-          </div>
-        }
         <BindKeyboardSwipeableViews onChangeIndex={this.handleChangeIndex}
                                     animateTransitions={false}
                                     enableMouseEvents={true}

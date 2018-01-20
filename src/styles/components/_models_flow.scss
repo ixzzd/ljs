@@ -93,22 +93,6 @@
   z-index: 98;
 }
 
-.scroll-down {
-  height: 30px;
-  width: 30px;
-  position: fixed;
-  bottom: 5%;
-  left: 50%;
-  z-index: 98;
-
-  .down-arrow {
-    height: 30px;
-    width: 30px;
-    background: url("../images/next-arrow.png") center center no-repeat;
-    transform: rotate(90deg);
-  }
-}
-
 .react-swipeable-view-container > div {
   overflow-y: auto !important;
 }

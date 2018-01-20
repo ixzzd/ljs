@@ -12,25 +12,25 @@ import ModelsFlow from "./ModelsFlow";
 @inject("store")
 @observer
 export default class App extends Component {
-	constructor(props) {
-		super(props);
-		this.store = this.props.store;
-	}
-	componentDidMount() {
-		this.store.appState.loadData();
-	}
+  constructor(props) {
+    super(props);
+    this.store = this.props.store;
+  }
+  componentDidMount() {
+    this.store.appState.loadData();
+  }
 
-	render() {
-		return (
-			<div className="wrapper">
-				{/*<DevTools />*/}
-				<Header cities={this.store.appState.cities} />
+  render() {
+    return (
+      <div className="wrapper">
+        {/*<DevTools />*/}
+        <Header cities={this.store.appState.cities} />
 
-				<div className='content'>
+        <div className='content'>
             <Route exact path='/:city?' component={ModelsGrid} />
             <Route exact path='/:city/:modelName' component={ModelsFlow} />
         </div>
-			</div>
-		);
-	}
+      </div>
+    );
+  }
 }

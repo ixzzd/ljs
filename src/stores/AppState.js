@@ -20,11 +20,7 @@ export default class AppState {
   }
 
   loadData() {
-    // if (localStorage.getItem('Data')) {
-      // this.setData(JSON.parse(localStorage.getItem('Data')));
-    // } else {
-      this.fetchData()
-    // }
+    this.fetchData()
   }
 
   async fetchData() {

@@ -63,6 +63,7 @@
     "react-images": "^0.5.11",
     "react-lazyload": "^2.3.0",
     "react-modal": "^3.0.4",
+    "react-player": "^1.1.1",
     "react-router-dom": "latest",
     "react-swipeable-views": "^0.12.8",
     "react-swipeable-views-utils": "^0.12.8",

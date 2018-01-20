@@ -3,6 +3,7 @@ import NavLink from 'react-router-dom'
 import Description from './Model/Description';
 import LazyLoad from 'react-lazyload';
 import { observer, inject } from 'mobx-react';
+import ReactPlayer from 'react-player'
 
 @inject("store")
 @observer
@@ -53,17 +54,24 @@ export default class Model extends React.Component {
                 <p>eyes: {this.model.eye_color}</p>
                 <p>hair: {this.model.hair_color}</p>
                 <p>shoes: {this.model.shoe_size} </p>
-                <p>94/78/92</p>
+                { this.model.size.length > 0 &&
+                    <p>{this.model.size}</p>
+                }
               </div>
             </div>
           </div>
         }
         {this.props.index == this.store.currentModelIndex &&
           <div className='contents'>
-            {this.model.contents.map((content, index) => (
+            {this.model.contents.reverse().map((content, index) => (
               <LazyLoad offset={100} once>
                 <div className='item'>
-                  <img key={content.id} src={content.image_url.normal}/>
+                  {content.type.toLowerCase() == 'video' ? (
+                      <ReactPlayer url={content.source} controls={true} />
+                    ) : (
+                      <img key={content.id} src={content.image_url.normal}/>
+                    )
+                  }
                   <span> {content.description} </span>
                 </div>
               </LazyLoad>

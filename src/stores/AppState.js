@@ -56,7 +56,7 @@ export default class AppState {
   @action setModelByIndex(index) {
     if (!this.modelsSwipeEnabled) return;
     this.model = this.filteredModels[index].name
-    window.history.pushState(null, null, this.model);
+    window.history.pushState(null, null, this.model.toLowerCase());
   }
 
   @action nextModel() {

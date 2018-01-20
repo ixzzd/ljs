@@ -6,6 +6,7 @@ import { virtualize } from 'react-swipeable-views-utils';
 import { bindKeyboard } from 'react-swipeable-views-utils';
 import {withRouter} from "react-router-dom";
 import { observer, inject } from 'mobx-react';
+import {Helmet} from "react-helmet";
 
 const BindKeyboardSwipeableViews = virtualize(bindKeyboard(SwipeableViews));
 
@@ -53,6 +54,18 @@ class ModelsFlow extends React.Component {
   render() {
     return (
       <div className='model-flow'>
+        {this.store.currentModel &&
+          <Helmet>
+            <title>{this.store.currentModel.name} . LUMPEN</title>
+            <link rel="canonical" href={'http://lumpen.agency/' + this.store.currentModel.cities[0].name + '/' + this.store.currentModel.name } />
+            <meta property="og:title" content={this.store.currentModel.name.toUpperCase()} />
+            <meta property="og:site_name" content="lumpen.agency" />
+            <meta property="og:url" content={'http://lumpen.agency/' + this.store.city + '/' + this.store.currentModel.name }/>
+            <meta property="og:image" content={this.store.currentModel.avatar.og} />
+            <link rel="image_src" href={this.store.currentModel.avatar.normal} />
+          </Helmet>
+        }
+
         <a className='arrow prev-arrow' onClick={this.handlePrevClick} />
         <a className='arrow next-arrow' onClick={this.handleNextClick} />
         <BindKeyboardSwipeableViews onChangeIndex={this.handleChangeIndex}

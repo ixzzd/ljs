@@ -60,7 +60,7 @@ export default class AppState {
   }
 
   @action nextModel() {
-    var nextIndex = this.modelIndex + 1
+    var nextIndex = this.currentModelIndex + 1
     if (nextIndex >= this.filteredModels.length) {
       nextIndex = 0
     }
@@ -68,7 +68,7 @@ export default class AppState {
   }
 
   @action prevModel() {
-    var prevIndex = this.modelIndex - 1
+    var prevIndex = this.currentModelIndex - 1
     if (prevIndex < 0) {
       prevIndex = this.filteredModels.length - 1
     }
@@ -79,12 +79,13 @@ export default class AppState {
     return this.models.filter(model =>
               this.modelInCity(model, this.city)
               && this.searchMatched(model)
+              && model.face
             ).sort(this.sortBySexAndPosition)
   }
 
   @computed get currentModel() {
-    if (this.modelIndex >= 0) {
-      return this.filteredModels[this.modelIndex]
+    if (this.currentModelIndex >= 0) {
+      return this.filteredModels[this.currentModelIndex]
     }
     else {
       return null
@@ -125,7 +126,7 @@ export default class AppState {
     return model.cities.map(city => (city.name)).includes(city)
   }
 
-  @computed get modelIndex() {
+  @computed get currentModelIndex() {
     return this.filteredModels.findIndex(m => m.name.toUpperCase() == this.model.toUpperCase())
   }
 
@@ -139,6 +140,10 @@ export default class AppState {
 
   @action setSex(sex) {
     this.sex = sex
+  }
+
+  @computed get currentModelContentPresent() {
+    return this.currentModel && this.currentModel.contents.length > 0
   }
 
   @computed get displayedCities() {

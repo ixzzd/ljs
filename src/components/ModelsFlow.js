@@ -46,7 +46,7 @@ class ModelsFlow extends React.Component {
     const { index, key } = params;
     var model = this.store.filteredModels[index]
     return (
-      model ? <Model key={model.id} model={model} /> : <div></div>
+      model ? <Model key={model.id} index={index} model={model} /> : <div></div>
     )
   }
 
@@ -55,15 +55,17 @@ class ModelsFlow extends React.Component {
       <div className='model-flow'>
         <a className='arrow prev-arrow' onClick={this.handlePrevClick} />
         <a className='arrow next-arrow' onClick={this.handleNextClick} />
-        <div className='arrow scroll-down'>
-          scroll down
-          <div className='arrow down-arrow'></div>
-        </div>
+        { this.store.currentModelContentPresent &&
+          <div className='scroll-down'>
+            scroll down
+            <div className='down-arrow'></div>
+          </div>
+        }
         <BindKeyboardSwipeableViews onChangeIndex={this.handleChangeIndex}
                                     animateTransitions={false}
                                     enableMouseEvents={true}
                                     disabled={!this.store.modelsSwipeEnabled}
-                                    index={this.store.modelIndex}
+                                    index={this.store.currentModelIndex}
                                     ignoreNativeScroll={true}
                                     slideRenderer={this.slideRenderer}
                                     animateHeight={true}

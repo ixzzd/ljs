@@ -55,9 +55,14 @@
   flex-wrap: wrap;
   justify-content: center;
 
+  .item {
+    display: flex;
+    flex-direction: column;
+    padding: 1vh;
+  }
+
   img{
     height: 90vh;
-    padding: 1vh;
     max-width: 1000px;
   }
 }
@@ -66,12 +71,16 @@
   height: 30px;
   width: 30px;
   position: fixed;
+  display:flex;
+  justify-content: center;
+  margin-top: -30px;
+  height:100%;
 }
 
 .prev-arrow {
   background: url("../images/prev-arrow.png") center center no-repeat;
   left: 5%;
-  margin-top: 19%;
+  display:flex;
   cursor: w-resize;
   z-index: 98;
 }
@@ -79,17 +88,22 @@
 .next-arrow {
   background: url("../images/next-arrow.png") center center no-repeat;
   right: 5%;
-  margin-top: 19%;
+  display:flex;
   cursor: e-resize;
   z-index: 98;
 }
 
 .scroll-down {
+  height: 30px;
+  width: 30px;
+  position: fixed;
+  bottom: 5%;
   left: 50%;
   z-index: 98;
-  bottom: 5%;
 
   .down-arrow {
+    height: 30px;
+    width: 30px;
     background: url("../images/next-arrow.png") center center no-repeat;
     transform: rotate(90deg);
   }

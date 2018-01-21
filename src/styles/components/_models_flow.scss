@@ -9,7 +9,7 @@
 
   .opened-image{
     padding-right: 20px;
-    height: 90vh;
+    height: 87vh;
     min-height: 500px;
   }
 
@@ -19,7 +19,6 @@
 
     .model-name{
       font-size: 30px;
-      line-height: 30px;
       font-family: 'Oswald', sans-serif;
     }
 
@@ -44,7 +43,6 @@
 
       p{
         margin: 3px 0 0 3px;
-        font-size: 16px;
       }
     }
   }
@@ -59,6 +57,10 @@
     display: flex;
     flex-direction: column;
     padding: 1vh;
+
+    span {
+      margin-top: 2px;
+    }
   }
 
   img{
@@ -79,18 +81,19 @@
 
 .prev-arrow {
   background: url("../images/prev-arrow.png") center center no-repeat;
-  left: 5%;
   display:flex;
   cursor: w-resize;
   z-index: 98;
+  left: 5%;
 }
 
 .next-arrow {
   background: url("../images/next-arrow.png") center center no-repeat;
-  right: 5%;
+  right: 0%;
   display:flex;
   cursor: e-resize;
   z-index: 98;
+  right: 5%;
 }
 
 .react-swipeable-view-container > div {

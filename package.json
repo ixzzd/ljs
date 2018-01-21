@@ -68,6 +68,7 @@
     "react-router-dom": "latest",
     "react-swipeable-views": "^0.12.8",
     "react-swipeable-views-utils": "^0.12.8",
+    "react-yandex-metrika": "^2.3.0",
     "rfx-core": "^1.5.3",
     "whatwg-fetch": "^2.0.3"
   },

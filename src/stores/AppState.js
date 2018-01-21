@@ -38,7 +38,9 @@ export default class AppState {
   }
 
   @action setCity(city) {
-    this.city = city.toLowerCase()
+    // if (this.cities.map(city => (city.name.toLowerCase())).includes(city.toLowerCase())) {
+      this.city = city.toLowerCase()
+    // }
   }
 
   @action setSearch(searchString) {
@@ -46,7 +48,9 @@ export default class AppState {
   }
 
   @action setModel(model) {
-    this.model = model
+    // if (this.models.map(model => (model.name.toLowerCase())).includes(model.toLowerCase())) {
+      this.model = model.toLowerCase()
+    // }
   }
 
   @action setModelByIndex(index) {

@@ -1,12 +1,13 @@
 @media (max-width:1028px) {
-  .header {
-    font-size: 20px;
-  }
-
   .wrapper {
     width: 95%;
+    font-size: 20px;
 
     .model-wrapper {
+      .model-name{
+        font-size: 40px;
+      }
+
       .opened-image {
         height: auto;
       }
@@ -21,7 +22,6 @@
 
     .models-wrapper {
       grid-template: repeat(2, 49.5%) / repeat(2, 49.5%);
-      margin-top: 5px;
 
       .model {
         img:hover{
@@ -33,16 +33,11 @@
     }
   }
 
-  .Dropdown-root {
-    font-size: 21px;
-    margin-bottom: 5px;
-  }
-
   .Dropdown-menu {
-    left: 5%;
-    right: 5%;
-    font-size: 35px;
-    top: 50px;
+    font-size: 40px;
+    width: 93%;
+    left: 4%;
+    top: 46px;
   }
 
   .Dropdown-option {

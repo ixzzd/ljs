@@ -19,7 +19,7 @@ export default class Contacts extends React.Component {
         <p>
           founder: <a href="mailto:lumpenmen@gmail.com">Avdotja Alexandrova</a>
           &nbsp;
-          developer: <a href="mailto:e.chemohonenko@gmail.com">Egor Chemokhonenko</a>
+          developer: <a href="https://github.com/ixzzd">Egor Chemokhonenko</a>
         </p>
 
         <p>clients:</p>

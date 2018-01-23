@@ -25,7 +25,7 @@ export default class AppState {
 
   async fetchData() {
     let { data } = await axios.get(
-      `http://lumpen.agency/data.json`
+      `http://api.lumpen.agency/data.json`
     );
     this.setData(data);
     localStorage.setItem('Data', JSON.stringify(data));

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Route, Link, withRouter } from "react-router-dom";
+import { Route, Link, withRouter, Switch } from "react-router-dom";
 import { inject, observer } from "mobx-react";
 import LazyRoute from "lazy-route";
 import DevTools from "mobx-react-devtools";
@@ -31,9 +31,11 @@ export default class App extends Component {
         <Header cities={this.store.appState.cities} />
 
         <div className='content'>
+          <Switch>
             <Route exact path='/contacts' component={Contacts} />
             <Route exact path='/:city?' component={ModelsGrid} />
             <Route exact path='/:city/:modelName' component={ModelsFlow} />
+          </Switch>
         </div>
       </div>
     );

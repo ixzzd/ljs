@@ -1,0 +1,34 @@
+.contacts {
+  font-family: "Oranienbaum","Times New Roman","serif";
+  font-size: 18px;
+  margin-top: 5%;
+  margin-left: 15%;
+
+  .logo {
+    width: 100px;
+    height: 100px;
+  }
+
+  p {
+    padding: 15px 0;
+  }
+
+  a {
+    line-height: 25px;
+    white-space: nowrap;
+    text-decoration: underline;
+  }
+
+  .partners {
+    width: 500px;
+
+    span + span:before {
+      text-decoration: none;
+      content: ", ";
+    }
+  }
+
+  .footer {
+    margin: 50px 0 20px 0;
+  }
+}

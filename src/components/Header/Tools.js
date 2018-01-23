@@ -17,17 +17,17 @@ export default class Tools extends React.Component {
         </div>
         <Search />
         <div>
-          <a className='social-button' href='/'>
+          <a className='social-button' href='https://www.facebook.com/lumpenmen'>
             <img src={instagramImg} alt='hello-icon' />
           </a>
         </div>
         <div>
-          <a className='social-button' href='/'>
+          <a className='social-button' href='https://www.instagram.com/lumpenmen/'>
             <img src={facebookImg} alt='hello-icon' />
           </a>
         </div>
         <div>
-          <a className='social-button' href='/'>
+          <a className='social-button' href='https://vk.com/lumpenmen'>
             <img src={vkImg} alt='hello-icon' />
           </a>
         </div>

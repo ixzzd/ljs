@@ -13,7 +13,9 @@ export default class ContentItem extends React.Component {
       <LazyLoad offset={100} once>
         <div className='item'>
           {this.content.type.toLowerCase() == 'video' ? (
-              <ReactPlayer url={this.content.source} controls={true} />
+              <ReactPlayer url={this.content.source}
+                           controls={true}
+                           width='900px' />
             ) : (
               <img key={this.content.id} src={this.content.image_url.normal}/>
             )

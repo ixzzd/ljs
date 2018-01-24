@@ -14,11 +14,11 @@
     }
 
     .contents {
-        img{
-          width: 100%;
-          height: unset;
-        }
+      img{
+        width: 100%;
+        height: unset;
       }
+    }
 
     .models-wrapper {
       grid-template: repeat(2, 49.5%) / repeat(2, 49.5%);

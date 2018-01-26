@@ -68,7 +68,7 @@ export default class Model extends React.Component {
         { this.props.index == this.store.currentModelIndex &&
           this.state.faceImageLoaded &&
             <div className='contents'>
-              {this.model.contents.reverse().map((content, index) => (
+              {this.model.contents.map((content, index) => (
                 <ContentItem content={content} />
               ))}
             </div>

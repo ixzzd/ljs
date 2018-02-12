@@ -21,7 +21,7 @@
     }
 
     .models-wrapper {
-      grid-template: repeat(2, 49.5%) / repeat(2, 49.5%);
+      grid-template-columns: repeat(2, 49.5%);
 
       .model {
         img:hover{

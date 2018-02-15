@@ -22,6 +22,7 @@
 
     .models-wrapper {
       grid-template-columns: repeat(2, 49.5%);
+      grid-auto-rows: unset;
 
       .model {
         img:hover{

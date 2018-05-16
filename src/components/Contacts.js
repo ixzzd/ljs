@@ -25,8 +25,8 @@ export default class Contacts extends React.Component {
         <p>clients:</p>
         <div className='partners'>
           {this.store.partners.map(partner => (
-            <span>
-              <a key={partner.name} href={partner.link}>{partner.name}</a>
+            <span key={partner.name}>
+              {partner.name}
             </span>
           ))}
         </div>

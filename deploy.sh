@@ -1,3 +1,3 @@
 #!/bin/bash
 npm run build
-rsync -a dist/ deployer@lumpen.agency:/home/lumpen_js --delete-after
+rsync -a dist/ deployer@46.101.192.130:/home/lumpen_js --delete-after

@@ -51,6 +51,12 @@ export default class Description extends React.Component {
                onClick={() => this.selectImage(model.profile)}/>
           }
 
+          {model.smile &&
+            <img className={this.imageClass(model.smile)}
+               src={model.smile.small}
+               onClick={() => this.selectImage(model.smile)}/>
+          }
+
           <div className='parameters'>
             <p>height: {model.height}</p>
             <p>eyes: {model.eye_color}</p>

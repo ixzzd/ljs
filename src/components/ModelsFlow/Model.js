@@ -46,7 +46,7 @@ export default class Model extends React.Component {
             <div className='column'>
               <div className='model-name'>{this.model.name}</div>
               {
-                [this.model.face, this.model.three_quarter, this.model.profile].filter(Boolean).map((image) => {
+                [this.model.face, this.model.three_quarter, this.model.profile, this.model.smile].filter(Boolean).map((image) => {
                     if (this.state.faceImageLoaded) {
                       return <img key={image.normal} className={this.imageClass(image)}
                              src={image.normal} onClick={(e) => this.selectImage(image, e)}/>

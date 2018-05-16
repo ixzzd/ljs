@@ -24,7 +24,7 @@ export default class ModelsGrid extends React.Component {
   }
 
   getModelURI(model) {
-    return `/${this.store.city}/${model.name.toLowerCase()}`
+    return `/${this.store.city.replace(/ /g,"%20")}/${model.name.toLowerCase()}`
   }
 
   renderGrid(models) {

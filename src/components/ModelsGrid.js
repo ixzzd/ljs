@@ -73,8 +73,8 @@ export default class ModelsGrid extends React.Component {
           <meta property="og:title" content={this.store.city.toUpperCase()} />
           <meta property="og:site_name" content="lumpen.agency" />
           <meta property="og:url" content={'http://lumpen.agency/' + this.store.city} />
-          <meta property="og:image" content='http://lumpen.agency/logo.png' />
-          <link rel="image_src" href='http://lumpen.agency/logo.png' />
+          <meta property="og:image" content="https://lumpen.ams3.digitaloceanspaces.com/logo.png" />
+          <link rel="image_src" href="https://lumpen.ams3.digitaloceanspaces.com/logo.png" />
         </Helmet>
 
         { this.renderMansGrid() }

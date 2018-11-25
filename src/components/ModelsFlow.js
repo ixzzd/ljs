@@ -47,7 +47,7 @@ class ModelsFlow extends React.Component {
     const { index, key } = params;
     var model = this.store.filteredModels[index]
     return (
-      model ? <Model key={model.id} index={index} model={model} /> : <div></div>
+      model ? <Model key={index} index={index} model={model} /> : <div key={index}></div>
     )
   }
 

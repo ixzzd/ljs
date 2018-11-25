@@ -54,10 +54,18 @@ export default class Model extends React.Component {
                 })
               }
               <div className='parameters'>
-                <p>height: {this.model.height}</p>
-                <p>eyes: {this.model.eye_color}</p>
-                <p>hair: {this.model.hair_color}</p>
-                <p>shoes: {this.model.shoe_size} </p>
+                { this.model.height &&
+                  <p>height: {this.model.height}</p>
+                }
+                { this.model.eye_color &&
+                    <p>eyes: {this.model.eye_color}</p>
+                }
+                { this.model.hair_color &&
+                    <p>hair: {this.model.hair_color}</p>
+                }
+                { this.model.shoe_size &&
+                    <p>shoes: {this.model.shoe_size} </p>
+                }
                 { this.model.size.length > 0 &&
                     <p>{this.model.size}</p>
                 }
@@ -69,7 +77,7 @@ export default class Model extends React.Component {
           this.state.faceImageLoaded &&
             <div className='contents'>
               {this.model.contents.map((content, index) => (
-                <ContentItem content={content} />
+                <ContentItem key={index} content={content} />
               ))}
             </div>
         }

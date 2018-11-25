@@ -10,7 +10,7 @@ export default class ContentItem extends React.Component {
 
   render() {
     return (
-      <LazyLoad offset={100} once>
+      <LazyLoad offset={100} height={900} once>
         <div className='item'>
           {this.content.type.toLowerCase() == 'video' ? (
               <ReactPlayer url={this.content.source}

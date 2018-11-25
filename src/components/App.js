@@ -20,7 +20,7 @@ export default class App extends Component {
     this.store = this.props.store;
   }
   componentDidMount() {
-    this.store.appState.loadData();
+    this.store.appState.fetchData();
   }
 
   render() {

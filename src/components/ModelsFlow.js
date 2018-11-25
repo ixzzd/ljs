@@ -69,13 +69,11 @@ class ModelsFlow extends React.Component {
         <a className='arrow prev-arrow' onClick={this.handlePrevClick} />
         <a className='arrow next-arrow' onClick={this.handleNextClick} />
         <BindKeyboardSwipeableViews onChangeIndex={this.handleChangeIndex}
-                                    animateTransitions={false}
-                                    enableMouseEvents={true}
-                                    disabled={!this.store.modelsSwipeEnabled}
                                     index={this.store.currentModelIndex}
-                                    ignoreNativeScroll={true}
                                     slideRenderer={this.slideRenderer}
                                     animateHeight={true}
+                                    overscanSlideAfter={2}
+                                    overscanSlideBefore={1}
                                     />
       </div>
     );

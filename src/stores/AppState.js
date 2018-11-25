@@ -7,7 +7,6 @@ export default class AppState {
   @observable partners;
   @observable city;
   @observable model;
-  @observable modelsSwipeEnabled;
   @observable search;
 
   constructor() {
@@ -16,11 +15,6 @@ export default class AppState {
     this.partners = [];
     this.city = 'moscow';
     this.model = '';
-    this.modelsSwipeEnabled = true;
-  }
-
-  loadData() {
-    this.fetchData()
   }
 
   async fetchData() {
@@ -54,7 +48,6 @@ export default class AppState {
   }
 
   @action setModelByIndex(index) {
-    if (!this.modelsSwipeEnabled) return;
     this.model = this.filteredModels[index].name
     window.history.pushState(null, null, this.model.toLowerCase());
   }
@@ -130,20 +123,8 @@ export default class AppState {
     return this.filteredModels.findIndex(m => m.name.toUpperCase() == this.model.toUpperCase())
   }
 
-  @action enableModelsSwipe() {
-    this.modelsSwipeEnabled = true
-  }
-
-  @action disableModelsSwipe() {
-    this.modelsSwipeEnabled = false
-  }
-
   @action setSex(sex) {
     this.sex = sex
-  }
-
-  @computed get currentModelContentPresent() {
-    return this.currentModel && this.currentModel.contents.length > 0
   }
 
   @computed get displayedCities() {

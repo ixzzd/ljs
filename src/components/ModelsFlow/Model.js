@@ -36,7 +36,7 @@ export default class Model extends React.Component {
   render() {
     return (
       <div>
-        {(this.props.index >= this.store.currentModelIndex && this.props.index < this.store.currentModelIndex + 3) &&
+        {(this.props.index >= this.store.currentModelIndex - 1 && this.props.index < this.store.currentModelIndex + 2) &&
           <div className='model-wrapper'>
             <ProgressiveImage src={this.state.selectedImage.normal} placeholder={this.state.selectedImage.small}>
               {(src, loading) => (

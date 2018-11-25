@@ -67,6 +67,7 @@
     "react-lazyload": "^2.3.0",
     "react-modal": "^3.6.1",
     "react-player": "^1.6.6",
+    "react-progressive-image": "^0.6.0",
     "react-router-dom": "^4.3.1",
     "react-swipeable-views": "^0.12.18",
     "react-swipeable-views-utils": "^0.12.18",

@@ -1,5 +1,6 @@
 import React from 'react';
 import NavLink from 'react-router-dom'
+import ProgressiveImage from 'react-progressive-image'
 import Description from './Model/Description';
 import ContentItem from './Model/ContentItem';
 import { observer, inject } from 'mobx-react';
@@ -14,13 +15,9 @@ export default class Model extends React.Component {
     this.model = this.props.model
     this.selectImage = this.selectImage.bind(this)
     this.imageClass = this.imageClass.bind(this)
-    this.onContentVisible = this.onContentVisible.bind(this)
+    this.handleImageLoaded = this.handleImageLoaded.bind(this)
     this.state = {selectedImage: this.model.face, faceImageLoaded: false}
   }
-
-  onContentVisible (isVisible) {
-    console.log('Element is now %s', isVisible ? 'visible' : 'hidden');
-  };
 
   selectImage(image, e) {
     this.setState({
@@ -28,29 +25,30 @@ export default class Model extends React.Component {
     })
   }
 
-  imageClass(image) {
-    if (this.state.selectedImage == image) return 'bordered'
-  }
-
   handleImageLoaded() {
     this.setState({ faceImageLoaded: true });
+  }
+
+  imageClass(image) {
+    if (this.state.selectedImage == image) return 'bordered'
   }
 
   render() {
     return (
       <div>
-        {this.props.index > this.store.currentModelIndex - 2 &&
+        {(this.props.index >= this.store.currentModelIndex && this.props.index < this.store.currentModelIndex + 3) &&
           <div className='model-wrapper'>
-            <img className='opened-image' src={this.state.selectedImage.normal}
-                 onLoad={this.handleImageLoaded.bind(this)} />
+            <ProgressiveImage src={this.state.selectedImage.normal} placeholder={this.state.selectedImage.small}>
+              {(src, loading) => (
+                <img className='opened-image' src={src} alt={this.model.name} onLoad={this.handleImageLoaded.bind(this)} />
+              )}
+            </ProgressiveImage>
             <div className='column'>
               <div className='model-name'>{this.model.name}</div>
               {
                 [this.model.face, this.model.three_quarter, this.model.profile, this.model.smile].filter(Boolean).map((image) => {
-                    if (this.state.faceImageLoaded) {
-                      return <img key={image.normal} className={this.imageClass(image)}
-                             src={image.normal} onClick={(e) => this.selectImage(image, e)}/>
-                    }
+                    return <img key={image.small} className={this.imageClass(image)}
+                           src={image.small} onClick={(e) => this.selectImage(image, e)}/>
                 })
               }
               <div className='parameters'>
@@ -74,7 +72,7 @@ export default class Model extends React.Component {
           </div>
         }
         { this.props.index == this.store.currentModelIndex &&
-          this.state.faceImageLoaded &&
+            this.state.faceImageLoaded &&
             <div className='contents'>
               {this.model.contents.map((content, index) => (
                 <ContentItem key={index} content={content} />

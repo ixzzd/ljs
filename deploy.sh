@@ -1,3 +1,3 @@
 #!/bin/bash
 yarn install && yarn build
-rsync -a dist/ deployer@46.101.192.130:/home/lumpen_js --delete-after
+rsync -a dist/ passanger@lumpen.agency:/home/passanger/lumpen_js --delete-after

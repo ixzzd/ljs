@@ -31,7 +31,7 @@ export default class Contacts extends React.Component {
           ))}
         </div>
 
-        <p className='footer'>Lumpen 2014-2018 ©</p>
+        <p className='footer'>Lumpen 2014-2019 ©</p>
       </div>
     );
   }

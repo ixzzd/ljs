@@ -11,12 +11,16 @@ export default class Search extends React.Component {
     super(props);
     this.store = this.props.store.appState;
     this.handleChange = this.handleChange.bind(this)
+    this.handleFocus = this.handleFocus.bind(this)
   }
 
   handleChange(event) {
     this.store.setSearch(event.target.value);
   }
 
+  handleFocus(event) {
+    this.props.history.push('/' + this.store.city)
+  }
   render() {
     return (
       <div>
@@ -25,7 +29,8 @@ export default class Search extends React.Component {
                placeholder='search'
                name='search'
                value={this.store.search}
-               onChange={this.handleChange} />
+               onChange={this.handleChange}
+               onFocus={this.handleFocus} />
       </div>
     );
   }

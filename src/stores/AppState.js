@@ -6,6 +6,7 @@ export default class AppState {
   @observable cities;
   @observable partners;
   @observable city;
+  @observable sex;
   @observable model;
   @observable search;
 
@@ -13,7 +14,8 @@ export default class AppState {
     this.models = [];
     this.cities = [];
     this.partners = [];
-    this.city = 'moscow';
+    this.city = 'all';
+    this.sex = 'all';
     this.model = '';
   }
 
@@ -47,6 +49,10 @@ export default class AppState {
     // }
   }
 
+  @action setSex(sex) {
+    this.sex = sex.toLowerCase();
+  }
+
   @action setModelByIndex(index) {
     this.model = this.filteredModels[index].name
     window.history.pushState(null, null, this.model.toLowerCase());
@@ -70,7 +76,8 @@ export default class AppState {
 
   @computed get filteredModels() {
     return this.models.filter(model =>
-              this.modelInCity(model, this.city)
+              this.cityMatched(model)
+              && this.sexMatched(model)
               && this.searchMatched(model)
               && model.face
             ).sort(this.sortBySexAndPosition)
@@ -85,15 +92,6 @@ export default class AppState {
     }
   }
 
-  @computed get sex() {
-    if (this.currentModel) {
-      return this.currentModel.sex
-    }
-    else {
-      return 'men'
-    }
-  }
-
   sortBySexAndPosition(a, b) {
     if (a.sex == b.sex) {
       return a.position - b.position
@@ -103,6 +101,24 @@ export default class AppState {
     }
     else{
       return 1
+    }
+  }
+
+  sexMatched(model) {
+    if (this.sex == 'all') {
+      return true
+    }
+    else {
+      return model.sex == this.sex
+    }
+  }
+
+  cityMatched(model) {
+    if (this.city == 'all') {
+      return true
+    }
+    else {
+      return model.cities.map(city => (city.name)).includes(this.city)
     }
   }
 
@@ -123,10 +139,6 @@ export default class AppState {
     return this.filteredModels.findIndex(m => m.name.toUpperCase() == this.model.toUpperCase())
   }
 
-  @action setSex(sex) {
-    this.sex = sex
-  }
-
   @computed get displayedCities() {
     var cities = this.cities.filter(city =>
                                 this.models.filter(model => this.modelInCity(model, city.name)).length > 0
@@ -134,7 +146,7 @@ export default class AppState {
                             .sort((a, b) => a.position - b.position)
                             .map(city => (city.name.toUpperCase()))
 
-    return cities
+    return ['ALL'].concat(cities);
     // .splice(cities.indexOf(this.city), 1);
   }
 }

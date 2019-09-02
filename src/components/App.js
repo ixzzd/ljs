@@ -28,7 +28,7 @@ export default class App extends Component {
       <div className="wrapper">
         {/*<DevTools />*/}
         <YMInitializer accounts={[25972483]} />
-        <Header cities={this.store.appState.cities} />
+        <Header />
 
         <div className='content'>
           <Switch>

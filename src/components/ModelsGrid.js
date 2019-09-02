@@ -4,6 +4,7 @@ import { observer, inject } from 'mobx-react';
 import LazyLoad from 'react-lazyload';
 import {Helmet} from "react-helmet";
 import { forceCheck } from 'react-lazyload';
+import Filters from "./Filters";
 
 @inject("store")
 @observer
@@ -27,44 +28,9 @@ export default class ModelsGrid extends React.Component {
     return `/${this.store.city.replace(/ /g,"%20")}/${model.name.toLowerCase()}`
   }
 
-  renderGrid(models) {
-    return (
-      <div className='models-wrapper'>
-        {models.map(model => (
-          <div className='model' key={model.id}>
-            <Link to={this.getModelURI(model)}>
-              <LazyLoad offset={3000} height={340}>
-                <img src={model.avatar.normal}/>
-              </LazyLoad>
-            </Link>
-          </div>
-        ))}
-      </div>
-    )
-  }
-
-  renderMansGrid() {
-    let models = this.store.filteredModels.filter(model => model.sex == 'men')
-    if (models.length > 0) { return this.renderGrid(models) }
-  }
-
-  renderWomensGrid() {
-    let models = this.store.filteredModels.filter(model => model.sex == 'women')
-    if (models.length > 0) {
-      return (
-        <div>
-          <div className='gridTitle'>
-            <Link to='/'>
-              LUMPENWOMEN
-            </Link>
-          </div>
-          { this.renderGrid(models)}
-        </div>
-      )
-    }
-  }
-
   render() {
+    let models = this.store.filteredModels;
+
     return (
       <div>
         <Helmet>
@@ -77,8 +43,18 @@ export default class ModelsGrid extends React.Component {
           <link rel="image_src" href="https://lumpen.ams3.digitaloceanspaces.com/logo.png" />
         </Helmet>
 
-        { this.renderMansGrid() }
-        { this.renderWomensGrid() }
+        <Filters />
+        <div className='models-wrapper'>
+          {models.map(model => (
+            <div className='model' key={model.id}>
+              <Link to={this.getModelURI(model)}>
+                <LazyLoad offset={1000} height={380}>
+                  <img src={model.avatar.normal}/>
+                </LazyLoad>
+              </Link>
+            </div>
+          ))}
+        </div>
       </div>
     );
   }

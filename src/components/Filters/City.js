@@ -15,7 +15,7 @@ export default class Cities extends React.Component {
 
   handleChangeDropdown(item) {
     this.store.setCity(item.value)
-    this.props.history.push('/' + item.value.toLowerCase())
+    this.props.history.push('/' + item.value.toLowerCase());
   }
 
   render() {

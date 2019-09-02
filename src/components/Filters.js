@@ -6,9 +6,9 @@ export default class Header extends React.Component {
   render() {
     return (
       <div className="filters">
-        <p>City: </p>
+        <p>CITY: </p>
         <City />
-        <p className='sex'>Sex: </p>
+        <p className='sex'>SEX: </p>
         <Sex />
       </div>
     );

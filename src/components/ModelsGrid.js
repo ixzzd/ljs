@@ -15,9 +15,12 @@ export default class ModelsGrid extends React.Component {
   }
 
   componentDidMount() {
+    this.store.setModel('')
+  }
+
+  componentDidUpdate() {
     let city = this.props.match.params.city
     if (city) { this.store.setCity(city) }
-    this.store.setModel('')
   }
 
   componentWillUpdate() {

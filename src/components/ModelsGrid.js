@@ -48,9 +48,9 @@ export default class ModelsGrid extends React.Component {
           {models.map(model => (
             <div className='model' key={model.id}>
               <Link to={this.getModelURI(model)}>
-                <LazyLoad offset={1000} height={380}>
+                {/* <LazyLoad offset={1000} height={380}> */}
                   <img src={model.avatar.normal}/>
-                </LazyLoad>
+                {/* </LazyLoad> */}
               </Link>
             </div>
           ))}

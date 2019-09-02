@@ -13,7 +13,7 @@ export default class Title extends React.Component {
   render() {
     return (
       <div className='logo'>
-        <Link to={'/'+this.store.city}>
+        <Link to={'/all'}>
           {"LUMPEN"+ (this.store.sex == 'all' ? '' : this.store.sex).toUpperCase()}
         </Link>
       </div>

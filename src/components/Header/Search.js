@@ -19,7 +19,9 @@ export default class Search extends React.Component {
   }
 
   handleFocus(event) {
-    this.props.history.push('/' + this.store.city)
+    this.store.setCity('all');
+    this.store.setSex('all');
+    this.props.history.push('/all')
   }
   render() {
     return (

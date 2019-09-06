@@ -12,24 +12,20 @@ export default class Contacts extends React.Component {
 
   render() {
     return (
-      <div className='contacts'>
+      <div className='info'>
         <img src={logoImg} alt='logo' className='logo'/>
-        <p>Lumpen is an agency with extensive casting base of exclusive Russian faces from all over the world.</p>
+        <p>Lumpen is an agency with an extensive casting base comprised of exclusive Russian faces coming from all over the globe. Founded and launched by Avdotja Alexandrova in 2014.</p>
 
         <p>
-          founder: <a href="mailto:lumpenmen@gmail.com">Avdotja Alexandrova</a>
+          Booking: <a href="mailto:lumpenmen@gmail.com">lumpenmen@gmail.com</a>
           &nbsp;
-          developer: <a href="https://github.com/ixzzd">Egor Chemokhonenko</a>
+          <a href="mailto:lumpenwomen@gmail.com">lumpenwomen@gmail.com</a>
+          <br/>
+          Casting: <a href="mailto:lumpencasting@gmail.com">lumpencasting@gmail.com</a>
         </p>
-
-        <p>clients:</p>
-        <div className='partners'>
-          {this.store.partners.map(partner => (
-            <span key={partner.name}>
-              {partner.name}
-            </span>
-          ))}
-        </div>
+        <p>
+          Code: <a href="https://github.com/ixzzd">Egor Chemokhonenko</a>
+        </p>
 
         <p className='footer'>Lumpen 2014-2019 ©</p>
       </div>

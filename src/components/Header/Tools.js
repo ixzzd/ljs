@@ -10,11 +10,12 @@ export default class Tools extends React.Component {
   render() {
     return (
       <div className='tools'>
-        <div className='contact-button'>
-          <NavLink activeClassName='active' to='/contacts'>
-            CONTACT
-          </NavLink>
-        </div>
+        <NavLink className='contact-button' activeClassName='active' to='/about'>
+          ABOUT
+        </NavLink>
+        <NavLink className='contact-button' activeClassName='active' to='/contacts'>
+          CONTACT
+        </NavLink>
         <Search />
         <div>
           <a className='social-button' href='https://www.instagram.com/lumpenmen'>

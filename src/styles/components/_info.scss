@@ -7,6 +7,12 @@
   .logo {
     width: 100px;
     height: 100px;
+    padding-right: 15px;
+  }
+
+  .pressLogo {
+    height: 35px;
+    padding-right: 20px;
   }
 
   p {
@@ -29,6 +35,7 @@
   }
 
   .footer {
-    margin: 50px 0 20px 0;
+    position: absolute;
+    bottom: 20px;
   }
 }

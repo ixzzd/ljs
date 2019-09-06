@@ -9,6 +9,7 @@ import Header from "./Header";
 import ModelsGrid from "./ModelsGrid";
 import ModelsFlow from "./ModelsFlow";
 import Contacts from "./Contacts";
+import About from "./About";
 
 
 @withRouter
@@ -33,6 +34,7 @@ export default class App extends Component {
         <div className='content'>
           <Switch>
             <Route exact path='/contacts' component={Contacts} />
+            <Route exact path='/about' component={About} />
             <Route exact path='/:city?' component={ModelsGrid} />
             <Route exact path='/:city/:modelName' component={ModelsFlow} />
           </Switch>

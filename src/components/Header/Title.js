@@ -14,13 +14,7 @@ export default class Title extends React.Component {
     return (
       <div className='logo'>
         <Link to='/all'>
-          if (this.store.sex == 'man') {
-            "LUMPENMEN"
-          } else if (this.store.sex == 'woman') {
-            "LUMPENWOMEN"
-          } else {
-            "LUMPEN"
-          }
+          {"LUMPEN"+ (this.store.sex == 'all' ? '' : this.store.sex).toUpperCase()}
         </Link>
       </div>
     );

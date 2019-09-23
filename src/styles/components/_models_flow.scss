@@ -50,6 +50,23 @@
   }
 }
 
+.contentTabs {
+  display: flex;
+  justify-content: center;
+
+  div {
+    padding: 20px;
+  }
+}
+
+.movies {
+  padding-top: 20px;
+
+  .moviesTitle {
+   font-size: 22px;
+  }
+}
+
 .contents {
   display: flex;
   flex-wrap: wrap;

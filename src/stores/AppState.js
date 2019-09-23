@@ -54,14 +54,16 @@ export default class AppState {
   }
 
   @action setModelByIndex(index) {
-    this.model = this.filteredModels[index].name
-    window.history.pushState(null, null, this.model.toLowerCase());
+    if (this.filteredModels[index]) {
+      this.model = this.filteredModels[index].name;
+      window.history.pushState(null, null, this.model.toLowerCase());
+    }
   }
 
   @action nextModel() {
     var nextIndex = this.currentModelIndex + 1
-    if (nextIndex >= this.filteredModels.length) {
-      nextIndex = 0
+    if (!this.filteredModels[nextIndex]) {
+      nextIndex = this.currentModelIndex;
     }
     this.setModelByIndex(nextIndex);
   }
@@ -120,6 +122,8 @@ export default class AppState {
     }
     else {
       return model.name.toUpperCase().includes(this.search.toUpperCase())
+        || model.height && model.height.toString().includes(this.search.substring(0,2))
+
     }
   }
 

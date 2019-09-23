@@ -80,7 +80,7 @@ export default class AppState {
               && this.sexMatched(model)
               && this.searchMatched(model)
               && model.face
-            ).sort(this.sortBySexAndPosition)
+            ).sort(this.sortByPosition)
   }
 
   @computed get currentModel() {
@@ -92,16 +92,8 @@ export default class AppState {
     }
   }
 
-  sortBySexAndPosition(a, b) {
-    if (a.sex == b.sex) {
+  sortByPosition(a, b) {
       return a.position - b.position
-    }
-    else if(a.sex == 'men'){
-      return -1
-    }
-    else{
-      return 1
-    }
   }
 
   sexMatched(model) {

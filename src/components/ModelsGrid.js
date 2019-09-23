@@ -46,7 +46,6 @@ export default class ModelsGrid extends React.Component {
           <link rel="image_src" href="https://lumpen.ams3.digitaloceanspaces.com/logo.png" />
         </Helmet>
 
-        <Filters />
         <div className='models-wrapper'>
           {models.map(model => (
             <div className='model' key={model.id}>

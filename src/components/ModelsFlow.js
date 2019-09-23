@@ -1,6 +1,5 @@
 import React from 'react';
 import Model from './ModelsFlow/Model'
-import Filters from './Filters'
 import { Link } from 'react-router-dom';
 import SwipeableViews from 'react-swipeable-views'
 import { virtualize } from 'react-swipeable-views-utils';
@@ -55,7 +54,6 @@ class ModelsFlow extends React.Component {
   render() {
     return (
       <div className='model-flow'>
-        <Filters />
         {this.store.currentModel &&
           <Helmet>
             <title>{this.store.currentModel.name} . LUMPEN</title>

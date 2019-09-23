@@ -16,18 +16,12 @@ export default class Model extends React.Component {
     this.selectImage = this.selectImage.bind(this)
     this.imageClass = this.imageClass.bind(this)
     this.handleImageLoaded = this.handleImageLoaded.bind(this)
-    this.state = {selectedImage: this.model.face, faceImageLoaded: false, tab: ''}
+    this.state = {selectedImage: this.model.face, faceImageLoaded: false}
   }
 
   selectImage(image, e) {
     this.setState({
       selectedImage: image
-    })
-  }
-
-  selectTab(tab, e) {
-    this.setState({
-      tab
     })
   }
 
@@ -43,7 +37,6 @@ export default class Model extends React.Component {
 
   render() {
     const media = this.model.contents.filter(content => ['photo', 'video'].includes(content.type.toLowerCase()));
-    // const press = this.model.contents.filter(content => 'press' == content.type.toLowerCase());
     const movies = this.model.contents.filter(content => 'movie' == content.type.toLowerCase());
 
     return (
@@ -92,37 +85,17 @@ export default class Model extends React.Component {
             </div>
           </div>
         }
-        { this.props.index == this.store.currentModelIndex &&
+        {
+          this.props.index == this.store.currentModelIndex &&
             this.state.faceImageLoaded &&
               <div>
-                {/* {<div className='contentTabs'> */}
-                {/*     {media.length > 0 && <div onClick={(e) => this.selectTab('fashion', e)}>FASHION</div>} */}
-                {/*     {movies.length > 0 && <div onClick={(e) => this.selectTab('movies', e)}>MOVIES</div>} */}
-                    {/* {this.press().length >= 0 && <div onClick={(e) => this.selectTab('press', e)}>PRESS</div>} */}
-                  {/* </div>} */}
-                  {this.state.tab == 'fashion' &&
-                    <div className='contents'>
-                      {media.map((content, index) => (
-                        <MediaItem key={index} content={content} />
-                      ))}
-                    </div>}
-                    {/* {this.state.tab == 'movies' && */}
-                    {/*   <div className='contents'> */}
-                    {/*     {movies.map((movie, index) => ( */}
-                    {/*       <p> */}
-                    {/*         {movie.description} */}
-                    {/*       </p> */}
-                    {/*     ))} */}
-                    {/*   </div>} */}
-                      {/* {this.state.tab == 'press' && */}
-                      {/*   <div className='contents'> */}
-                      {/*   {press.map((press, index) => ( */}
-                      {/*     <a href={}> */}
-                      {/*       {press.description} */}
-                      {/*     </p> */}
-                      {/*   ))} */}
-                      {/* </div>} */}
-                    </div>
+                {this.state.tab == 'fashion' &&
+                  <div className='contents'>
+                    {media.map((content, index) => (
+                      <MediaItem key={index} content={content} />
+                    ))}
+                  </div>}
+                </div>
         }
       </div>
     );

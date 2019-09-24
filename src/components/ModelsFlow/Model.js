@@ -36,7 +36,7 @@ export default class Model extends React.Component {
 
 
   render() {
-    const media = this.model.contents.filter(content => ['photo', 'video'].includes(content.type.toLowerCase()));
+    const media = this.model.contents.filter(content => ['photo', 'video', ''].includes(content.type.toLowerCase()));
     const movies = this.model.contents.filter(content => 'movie' == content.type.toLowerCase());
 
     return (
@@ -88,14 +88,11 @@ export default class Model extends React.Component {
         {
           this.props.index == this.store.currentModelIndex &&
             this.state.faceImageLoaded &&
-              <div>
-                {this.state.tab == 'fashion' &&
-                  <div className='contents'>
-                    {media.map((content, index) => (
-                      <MediaItem key={index} content={content} />
-                    ))}
-                  </div>}
-                </div>
+              <div className='contents'>
+                {media.map((content, index) => (
+                  <MediaItem key={index} content={content} />
+                ))}
+              </div>
         }
       </div>
     );

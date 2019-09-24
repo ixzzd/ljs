@@ -1,8 +1,13 @@
 .header {
   display: flex;
   justify-content: center;
-  margin: 10px 0 5px 0;
+  margin: 5px 0;
   align-items: center;
+}
+
+
+.headerItem{
+  margin-left: 6px;
 }
 
 .logo {
@@ -11,13 +16,13 @@
   margin-right: auto;
 }
 
-.tools {
-  display: flex;
-  align-items: baseline;
+.contact-button {
+  padding-right: 12px;
+  padding-bottom: 3px;
 }
 
-.contact-button {
-  padding-right: 10px;
+.sex{
+  padding-left: 8px;
 }
 
 .Dropdown-root {
@@ -39,7 +44,7 @@
   background-color: white;
   border-width: 1px;
   border-style: solid;
-  margin: 15px 0px 0px -15px;;
+  margin: 20px 0px 0px -22px;;
   padding: 0px 15px;
   z-index: 99;
 }
@@ -61,10 +66,6 @@
   white-space: nowrap;
 }
 
-.tools > div{
-  margin-left: 3px;
-}
-
 .search {
   font-family: "Times New Roman","Times","serif";
   font-size: 15px;
@@ -75,7 +76,7 @@
 }
 
 input.search{
-  height: 27px;
+  height: 28px;
   width: 160px;
 }
 
@@ -97,24 +98,19 @@ input.search{
 }
 
 .social-button img{
-  width: 15px;
-  height: 15px;
+  width: 16px;
+  height: 16px;
   padding: 7px;
   border-style: solid;
   border-width: 1px;
-  margin-bottom: -11px
+  margin-bottom: -3px
 }
 
 .filters {
   display: flex;
-  margin-bottom: 1px;
-  margin-right: 10px;
-  padding: 5px 5px 5px 5px;
+  padding: 5px 8px 5px 12px;
   border-style: solid;
   border-width: 1px;
   border-color: black;
 }
 
-.sex{
- padding-left: 10px;
-}

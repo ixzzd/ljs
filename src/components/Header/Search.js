@@ -25,7 +25,7 @@ export default class Search extends React.Component {
   }
   render() {
     return (
-      <div>
+      <div className="headerItem">
         <input className='search'
                type='text'
                placeholder='search by name/hight'

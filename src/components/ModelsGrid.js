@@ -4,7 +4,6 @@ import { observer, inject } from 'mobx-react';
 import LazyLoad from 'react-lazyload';
 import {Helmet} from "react-helmet";
 import { forceCheck } from 'react-lazyload';
-import Filters from "./Filters";
 
 @inject("store")
 @observer

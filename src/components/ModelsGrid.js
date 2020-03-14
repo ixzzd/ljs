@@ -24,7 +24,7 @@ export default class ModelsGrid extends React.Component {
   }
 
   componentWillUpdate() {
-    // forceCheck()
+    forceCheck()
   }
 
   getModelURI(model) {

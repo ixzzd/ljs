@@ -3,7 +3,7 @@ import { Route, Link, withRouter, Switch } from "react-router-dom";
 import { inject, observer } from "mobx-react";
 import LazyRoute from "lazy-route";
 import DevTools from "mobx-react-devtools";
-import { YMInitializer } from 'react-yandex-metrika';
+// import { YMInitializer } from 'react-yandex-metrika';
 
 import Header from "./Header";
 import ModelsGrid from "./ModelsGrid";
@@ -29,16 +29,18 @@ export default class App extends Component {
       <div>
         {this.store.cities && this.store.cities.length == 0 ?
 
-          <div className="center">
-            <div className='logo'>LUMPEN</div>
-            <ReactLoading color={"#000000"} type={"bars"} width={120} />
+          <div className="loaderWrapper">
+            <div className="loader">
+              <div className='logo'>LUMPEN</div>
+              <ReactLoading color={"#000000"} type={"bars"} width={120} />
+            </div>
           </div>
 
         :
 
         <div className="wrapper">
           {/*<DevTools />*/}
-          <YMInitializer accounts={[25972483]} />
+          {/* <YMInitializer accounts={[25972483]} /> */}
           <Header />
           <div className='content'>
             <Switch>

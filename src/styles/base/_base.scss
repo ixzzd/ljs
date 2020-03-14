@@ -13,8 +13,9 @@ a {
   color: black;
 }
 
-.center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
+.loaderWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }

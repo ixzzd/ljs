@@ -44,7 +44,7 @@
     "webpack-dev-server": "^2.11.3"
   },
   "dependencies": {
-    "axios": "^0.16.2",
+    "axios": "^0.18.1",
     "css-declaration-sorter": "^2.0.0",
     "css-mqpacker": "^6.0.2",
     "faker": "^4.1.0",

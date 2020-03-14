@@ -21,10 +21,12 @@ export default class Cities extends React.Component {
   render() {
     return (
       <div className='cities' >
-        <Dropdown
-          options={this.store.displayedCities}
-          onChange={this.handleChangeDropdown.bind(this)}
-          placeholder={this.store.city.toUpperCase()} />
+        {this.store.cities &&
+          <Dropdown
+            options={this.store.displayedCities}
+            onChange={this.handleChangeDropdown.bind(this)}
+            placeholder={this.store.city.toUpperCase()} />
+        }
       </div>
     );
   }

@@ -17,6 +17,7 @@ export default class AppState {
     this.city = 'all';
     this.sex = 'all';
     this.model = '';
+    this.isLoading = true;
   }
 
   async fetchData() {
@@ -24,7 +25,6 @@ export default class AppState {
       `https://api.lumpen.agency/data.json`
     );
     this.setData(data);
-    localStorage.setItem('Data', JSON.stringify(data));
   }
 
   @action setData(data) {

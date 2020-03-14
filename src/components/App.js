@@ -10,35 +10,46 @@ import ModelsGrid from "./ModelsGrid";
 import ModelsFlow from "./ModelsFlow";
 import Contacts from "./Contacts";
 import About from "./About";
+import ReactLoading from 'react-loading';
 
-
-@withRouter
 @inject("store")
+@withRouter
 @observer
 export default class App extends Component {
   constructor(props) {
     super(props);
-    this.store = this.props.store;
+    this.store = this.props.store.appState;
   }
   componentDidMount() {
-    this.store.appState.fetchData();
+    this.store.fetchData();
   }
 
   render() {
     return (
-      <div className="wrapper">
-        {/*<DevTools />*/}
-        <YMInitializer accounts={[25972483]} />
-        <Header />
+      <div>
+        {this.store.cities && this.store.cities.length == 0 ?
 
-        <div className='content'>
-          <Switch>
-            <Route exact path='/contacts' component={Contacts} />
-            <Route exact path='/about' component={About} />
-            <Route exact path='/:city?' component={ModelsGrid} />
-            <Route exact path='/:city/:modelName' component={ModelsFlow} />
-          </Switch>
+          <div className="center">
+            <div className='logo'>LUMPEN</div>
+            <ReactLoading color={"#000000"} type={"bars"} width={120} />
+          </div>
+
+        :
+
+        <div className="wrapper">
+          {/*<DevTools />*/}
+          <YMInitializer accounts={[25972483]} />
+          <Header />
+          <div className='content'>
+            <Switch>
+              <Route exact path='/contacts' component={Contacts} />
+              <Route exact path='/about' component={About} />
+              <Route exact path='/:city?' component={ModelsGrid} />
+              <Route exact path='/:city/:modelName' component={ModelsFlow} />
+            </Switch>
+          </div>
         </div>
+        }
       </div>
     );
   }

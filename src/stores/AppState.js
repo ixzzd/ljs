@@ -122,7 +122,7 @@ export default class AppState {
     }
     else {
       return model.name.toUpperCase().includes(this.search.toUpperCase())
-        || model.height && model.height.toString().includes(this.search.substring(0,2))
+        || model.height && model.height.toString().includes(this.search)
 
     }
   }

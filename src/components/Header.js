@@ -25,7 +25,7 @@ export default class Header extends React.Component {
         <div className="filters headerItem">
           <p>CITY: </p>
           <City />
-          <p className='sex'>SEX: </p>
+          <p className='sex'>GENDER: </p>
           <Sex />
         </div>
 

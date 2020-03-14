@@ -28,7 +28,7 @@ export default class Search extends React.Component {
       <div className="headerItem">
         <input className='search'
                type='text'
-               placeholder='search by name/hight'
+               placeholder='search by name/height'
                name='search'
                value={this.store.search}
                onChange={this.handleChange}

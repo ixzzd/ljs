@@ -29,7 +29,6 @@ export default class AppState {
     )
   }
 
-
   @action setCity(city) {
     this.city = city.toLowerCase()
   }

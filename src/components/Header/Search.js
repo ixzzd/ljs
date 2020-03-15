@@ -9,7 +9,7 @@ import { withRouter } from "react-router-dom";
 export default class Search extends React.Component {
   constructor(props) {
     super(props);
-    this.store = this.props.store.appState;
+    this.store = this.props.store;
     this.handleChange = this.handleChange.bind(this)
     this.handleFocus = this.handleFocus.bind(this)
   }

@@ -11,7 +11,7 @@ import { forceCheck } from 'react-lazyload';
 export default class ModelsGrid extends React.Component {
   constructor(props) {
     super(props);
-    this.store = this.props.store.appState;
+    this.store = this.props.store;
   }
 
   componentDidMount() {

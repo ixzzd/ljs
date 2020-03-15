@@ -17,17 +17,17 @@ import ReactLoading from 'react-loading';
 export default class App extends Component {
   constructor(props) {
     super(props);
-    this.store = this.props.store.appState;
+    this.store = this.props.store;
   }
   componentDidMount() {
     this.store.fetchData();
   }
 
   render() {
-    console.log(this.store);
+    console.log(this)
     return (
       <div>
-        {this.store.models.length > 0 ?
+        {this.store.models && this.store.models.length > 0 ?
 
           <div className="wrapper">
             {/* <YMInitializer accounts={[25972483]} /> */}

@@ -62,7 +62,7 @@
     "pushstate-server": "^3.0.1",
     "react": "^16.8.2",
     "react-dom": "^16.3.2",
-    "react-dropdown": "^1.6.2",
+    "react-dropdown": "^1.7.0",
     "react-helmet": "^5.2.0",
     "react-images": "^0.5.19",
     "react-lazyload": "^2.3.0",

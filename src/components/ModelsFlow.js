@@ -15,7 +15,7 @@ const BindKeyboardSwipeableViews = virtualize(bindKeyboard(SwipeableViews));
 class ModelsFlow extends React.Component {
   constructor(props) {
     super(props);
-    this.store = this.props.store.appState;
+    this.store = this.props.store;
     this.handleNextClick = this.handleNextClick.bind(this)
     this.handlePrevClick = this.handlePrevClick.bind(this)
     this.handleChangeIndex = this.handleChangeIndex.bind(this)

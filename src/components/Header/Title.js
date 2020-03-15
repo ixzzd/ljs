@@ -7,7 +7,7 @@ import { observer, inject } from 'mobx-react';
 export default class Title extends React.Component {
   constructor(props) {
     super(props);
-    this.store = this.props.store.appState;
+    this.store = this.props.store;
   }
 
   render() {

@@ -9,7 +9,7 @@ import { withRouter } from "react-router-dom";
 export default class Cities extends React.Component {
   constructor(props) {
     super(props);
-    this.store = this.props.store.appState;
+    this.store = this.props.store;
     this.handleChangeDropdown = this.handleChangeDropdown.bind(this)
   }
 

@@ -10,7 +10,7 @@ import { observer, inject } from 'mobx-react';
 export default class Model extends React.Component {
   constructor(props) {
     super(props)
-    this.store = this.props.store.appState
+    this.store = this.props.store
     this.index = this.props.index
     this.model = this.props.model
     this.selectImage = this.selectImage.bind(this)

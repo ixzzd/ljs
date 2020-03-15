@@ -39,8 +39,8 @@ module.exports = {
                         "react"
                     ],
                     plugins: [
+                        "transform-decorators-legacy",
                         "transform-async-to-generator",
-                        "transform-decorators-legacy"
                     ]
                 }
             },

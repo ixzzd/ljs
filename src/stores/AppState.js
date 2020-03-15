@@ -8,12 +8,14 @@ export default class AppState {
   @observable city = 'all';
   @observable sex = 'all';
   @observable model = '';
+  @observable isLoaded = true;
   @observable search = '';
 
   @action fetchData() {
     this.models = [];
     this.cities = [];
     this.partners = [];
+    this.isLoaded = false;
     axios.get(
       `https://api.lumpen.agency/data.json`
     ).then(
@@ -22,6 +24,7 @@ export default class AppState {
         this.models = data.data.models;
         this.cities = data.data.cities;
         this.partners = data.data.partners;
+        this.isLoaded = true;
       },
       error => {
         console.log(error);

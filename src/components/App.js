@@ -27,7 +27,7 @@ export default class App extends Component {
     console.log(this)
     return (
       <div>
-        {this.store.models && this.store.models.length > 0 ?
+        {this.store.isLoaded ?
 
           <div className="wrapper">
             {/* <YMInitializer accounts={[25972483]} /> */}

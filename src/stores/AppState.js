@@ -2,41 +2,36 @@ import { observable, action, computed } from "mobx";
 import axios from "axios";
 
 export default class AppState {
-  @observable models;
-  @observable cities;
-  @observable partners;
-  @observable city;
-  @observable sex;
-  @observable model;
-  @observable search;
+  @observable cities = [];
+  @observable partners = [];
+  @observable models = [];
+  @observable city = 'all';
+  @observable sex = 'all';
+  @observable model = '';
+  @observable search = '';
 
-  constructor() {
+  @action fetchData() {
     this.models = [];
     this.cities = [];
     this.partners = [];
-    this.city = 'all';
-    this.sex = 'all';
-    this.model = '';
-    this.isLoading = true;
-  }
-
-  async fetchData() {
-    let { data } = await axios.get(
+    axios.get(
       `https://api.lumpen.agency/data.json`
-    );
-    this.setData(data);
+    ).then(
+      data => {
+        console.log("data fetched");
+        this.models = data.data.models;
+        this.cities = data.data.cities;
+        this.partners = data.data.partners;
+      },
+      error => {
+        console.log(error);
+      }
+    )
   }
 
-  @action setData(data) {
-    this.models = data.models;
-    this.cities = data.cities;
-    this.partners = data.partners;
-  }
 
   @action setCity(city) {
-    // if (this.cities.map(city => (city.name.toLowerCase())).includes(city.toLowerCase()) || city == '') {
-      this.city = city.toLowerCase()
-    // }
+    this.city = city.toLowerCase()
   }
 
   @action setSearch(searchString) {
@@ -44,9 +39,7 @@ export default class AppState {
   }
 
   @action setModel(model) {
-    // if (this.models.map(model => (model.name.toLowerCase())).includes(model.toLowerCase())) {
-      this.model = model.toLowerCase()
-    // }
+    this.model = model.toLowerCase()
   }
 
   @action setSex(sex) {

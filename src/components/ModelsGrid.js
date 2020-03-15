@@ -4,7 +4,7 @@ import { observer, inject } from 'mobx-react';
 import ProgressiveImage from 'react-progressive-image'
 import {Helmet} from "react-helmet";
 import { forceCheck } from 'react-lazyload';
-import LazyLoad from 'react-lazyload';
+// import LazyLoad from 'react-lazyload';
 
 @inject("store")
 @observer
@@ -23,9 +23,9 @@ export default class ModelsGrid extends React.Component {
     if (city) { this.store.setCity(city) }
   }
 
-  componentWillUpdate() {
-    forceCheck()
-  }
+  // componentWillUpdate() {
+  //   forceCheck()
+  // }
 
   getModelURI(model) {
     return `/${this.store.city.replace(/ /g,"%20")}/${model.name.toLowerCase()}`
@@ -45,12 +45,12 @@ export default class ModelsGrid extends React.Component {
         </Helmet>
 
         <div className='models-wrapper'>
-          {this.store.models && this.store.filteredModels.map(model => (
+          {this.store.filteredModels.map(model => (
             <div className='model' key={model.id}>
               <Link to={this.getModelURI(model)}>
-                <LazyLoad offset={1140} height={380}>
+                {/* <LazyLoad offset={1140} height={380}> */}
                   <img src={model.avatar.normal} alt={model.name} />
-                </LazyLoad>
+                {/* </LazyLoad> */}
               </Link>
             </div>
           ))}

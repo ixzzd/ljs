@@ -27,7 +27,7 @@ export default class Contacts extends React.Component {
           Code: <a href="https://github.com/ixzzd">Egor Chemokhonenko</a>
         </p>
 
-        <p className='footer'>Lumpen 2014-2019 ©</p>
+        <p className='footer'>Lumpen 2014-2020 ©</p>
       </div>
     );
   }

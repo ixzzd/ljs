@@ -38,7 +38,7 @@ export default class Contacts extends React.Component {
           032с, Baron Magazine, Boycott Magazine, British Vogue, Buro 24/7, Dazed, Document Journal, Double Magazine, Dust Magazine, i-D Magazine, Intersection Magazine, Glamour Russia, Grind Magazine, GQ Russia, Harper’s Bazaar Russia, Elle Russia, Fucking Young!, Flacon Magazine, King Kong Magazine, L'Officiel Hommes Germany, Man About Town, Men's Uno, Modern Weekly China, Numéro Russia, Office Magazine, Purple Magazine, Re-Edition Mag, Sicky Magazine, Sleek Magazine, SNC Russia, The Blueprint, The Stylist France, The WILD Magazine, V Magazine, VMAN, Vogue Hommes, Vogue Italia, Vogue Russia
         </div>
 
-        <p className='footer'>Lumpen 2014-2019 ©</p>
+        <p className='footer'>Lumpen 2014-2020 ©</p>
       </div>
     );
   }

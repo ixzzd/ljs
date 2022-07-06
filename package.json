@@ -53,7 +53,7 @@
     "lazy-route": "^1.0.7",
     "mobx": "^4.15.4",
     "mobx-react": "^6.1.8",
-    "moment": "^2.22.2",
+    "moment": "^2.29.4",
     "node-pre-gyp": "^0.11.0",
     "node-sass": "^4.9.4",
     "package": "^1.0.1",
